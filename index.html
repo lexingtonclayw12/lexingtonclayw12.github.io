@@ -1,5 +1,1819 @@
 <!DOCTYPE html>
-<html><head>
-  <meta name="tiktok-developers-site-verification" content="P2GTsfRB4DUnDLSib3ySKTYpfyuixVwl" />
-  <title>lexingtonclayw12</title>
-</head><body></body></html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wright Click Studios — Elite Websites for Local Businesses</title>
+<meta name="description" content="Wright Click Studios builds ultra-premium, hand-coded digital real estate for ambitious local brands. World-class sites for under $500. Zero clunky builders." />
+<meta name="theme-color" content="#0A0A0A" />
+
+<!-- Carried over from the previous page at this domain. Removing it breaks TikTok domain verification. -->
+<meta name="tiktok-developers-site-verification" content="P2GTsfRB4DUnDLSib3ySKTYpfyuixVwl" />
+
+<meta property="og:title" content="Wright Click Studios — Elite Websites for Local Businesses" />
+<meta property="og:description" content="We give local businesses the website they actually deserve. Hand-coded, ultra-fast, under $500." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:    '#0A0A0A',
+          ink2:   '#0E0E10',
+          ink3:   '#131317',
+          cyan:   '#00F2FE',
+          azure:  '#4FACFE',
+          violet: '#7B5CFF',
+          brass:  '#C9A227',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          body:    ['Inter', 'system-ui', 'sans-serif'],
+          serif:   ['"Playfair Display"', 'Georgia', 'serif'],
+          mono:    ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        },
+        maxWidth: { screen: '1240px' },
+      }
+    }
+  }
+</script>
+
+<style>
+  :root{
+    --cyan:#00F2FE;
+    --azure:#4FACFE;
+    --violet:#7B5CFF;
+    --grad: linear-gradient(102deg, #00F2FE 0%, #4FACFE 52%, #7B5CFF 100%);
+  }
+
+  html { scroll-padding-top: 96px; }
+  body {
+    background:#0A0A0A;
+    color:#FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: rgba(0,242,254,.28); color:#fff; }
+
+  /* ---------- Scrollbar ---------- */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background:#0A0A0A; }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,#00F2FE,#7B5CFF);
+    border-radius: 99px;
+    border: 3px solid #0A0A0A;
+  }
+
+  /* ---------- Text + border gradients ---------- */
+  .grad-text{
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .grad-bg{ background: var(--grad); }
+
+  /* Gradient hairline border via mask */
+  .grad-border{ position: relative; }
+  .grad-border::before{
+    content:"";
+    position:absolute; inset:0;
+    border-radius: inherit;
+    padding:1px;
+    background: linear-gradient(140deg, rgba(0,242,254,.55), rgba(123,92,255,.35) 45%, rgba(255,255,255,.06) 75%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+    pointer-events:none;
+    opacity:.75;
+    transition: opacity .45s ease;
+  }
+  .grad-border:hover::before{ opacity:1; }
+
+  /* ---------- Glass ---------- */
+  /* No backdrop-filter here on purpose. A dozen blurred surfaces on screen at
+     once was the main source of scroll jank, and over a near-black page the
+     blur is invisible anyway — a translucent gradient reads identically.
+     backdrop-filter is reserved for the fixed nav, which really does sit over
+     moving content. */
+  .glass{
+    background: linear-gradient(160deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+    border: 1px solid rgba(255,255,255,.09);
+  }
+  .glass-deep{
+    background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(16,16,20,.72));
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 40px 90px -50px rgba(0,242,254,.35), inset 0 1px 0 rgba(255,255,255,.07);
+  }
+
+  /* ---------- Ambient light ---------- */
+  /* No filter: blur() at all. Blurring a 700px element is the single most
+     expensive thing on the page — its cost scales with both radius and area,
+     and it was what made scrolling stutter. A multi-stop radial gradient
+     produces the same soft falloff and composites for free. */
+  .aurora{
+    position:absolute;
+    border-radius:50%;
+    filter: blur(22px);   /* small radius only — the gradient does the real work */
+    pointer-events:none;
+    will-change: transform;
+  }
+  /* Falloff is deliberately tight. Fill rate — the number of alpha-blended
+     pixels — is what costs frames here, so the colour is concentrated in a
+     bright core and reaches zero early rather than washing the viewport. */
+  .a-cyan{
+    background: radial-gradient(circle closest-side,
+      rgba(0,242,254,.72), rgba(0,242,254,.38) 24%, rgba(0,242,254,.13) 44%,
+      rgba(0,242,254,.03) 58%, rgba(0,242,254,0) 68%);
+  }
+  .a-violet{
+    background: radial-gradient(circle closest-side,
+      rgba(123,92,255,.75), rgba(123,92,255,.40) 24%, rgba(123,92,255,.14) 44%,
+      rgba(123,92,255,.03) 58%, rgba(123,92,255,0) 68%);
+  }
+  .a-azure{
+    background: radial-gradient(circle closest-side,
+      rgba(79,172,254,.70), rgba(79,172,254,.36) 24%, rgba(79,172,254,.12) 44%,
+      rgba(79,172,254,.03) 58%, rgba(79,172,254,0) 68%);
+  }
+  @keyframes drift {
+    0%,100% { transform: translate3d(0,0,0) scale(1); }
+    33%     { transform: translate3d(4%, -6%, 0) scale(1.09); }
+    66%     { transform: translate3d(-5%, 4%, 0) scale(.96); }
+  }
+  .drift-slow { animation: drift 22s ease-in-out infinite; }
+  .drift-slower { animation: drift 30s ease-in-out infinite reverse; }
+
+  /* Fine technical grid */
+  .grid-lines{
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 72px 72px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 20%, transparent 78%);
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 20%, transparent 78%);
+  }
+
+  /* Film grain — plain fixed layer. No mix-blend-mode and no oversized box:
+     both forced a full-viewport recomposite on every scroll frame. */
+  .grain::after{
+    content:"";
+    position:fixed; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
+    opacity:.05;
+    pointer-events:none;
+    z-index:60;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+    border-radius: 999px;
+    font-weight:600;
+    letter-spacing:-.01em;
+    /* --tx/--ty drive the magnetic pull, --s the hover scale, so JS and CSS never fight */
+    transform: translate3d(var(--tx,0px), var(--ty,0px), 0) scale(var(--s,1));
+    transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, background-color .35s ease, color .35s ease, border-color .35s ease, filter .35s ease;
+    will-change: transform;
+  }
+  .btn:hover{ --s:1.055; }
+  .btn:active{ --s:.975; }
+  .magnetic{ transition: transform .18s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, filter .35s ease; }
+  .magnetic:not(:hover){ transition-duration: .55s; }
+  .btn:focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; }
+
+  .btn-primary{
+    background: var(--grad);
+    color:#04070A;
+    box-shadow: 0 10px 34px -12px rgba(0,242,254,.6);
+  }
+  .btn-primary:hover{ box-shadow: 0 20px 55px -14px rgba(0,242,254,.78); filter: brightness(1.07); }
+
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,.16);
+    color:#fff;
+    background: rgba(255,255,255,.02);
+  }
+  .btn-ghost:hover{ border-color: rgba(0,242,254,.55); background: rgba(0,242,254,.07); }
+
+  /* Shimmer sweep on primary buttons */
+  .sheen{ position:relative; overflow:hidden; }
+  .sheen::after{
+    content:"";
+    position:absolute; top:0; left:-130%;
+    width:60%; height:100%;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+    transform: skewX(-18deg);
+    transition: left .75s cubic-bezier(.16,1,.3,1);
+  }
+  .sheen:hover::after{ left:130%; }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform: translateY(26px);
+    transition: opacity .95s cubic-bezier(.16,1,.3,1), transform .95s cubic-bezier(.16,1,.3,1);
+    transition-delay: var(--d, 0ms);
+  }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------- Marquee ---------- */
+  @keyframes scrollx { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+  .marquee-track{ animation: scrollx 38s linear infinite; }
+  .marquee:hover .marquee-track{ animation-play-state: paused; }
+  .fade-x{
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+
+  /* ---------- Card spotlight follows cursor ---------- */
+  .spotlight{ position:relative; overflow:hidden; }
+  .spotlight::after{
+    content:"";
+    position:absolute; inset:0;
+    background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(0,242,254,.13), transparent 62%);
+    opacity:0; transition: opacity .5s ease;
+    pointer-events:none;
+  }
+  .spotlight:hover::after{ opacity:1; }
+
+  /* ---------- Case study panels ---------- */
+  .panel{ display:none; }
+  .panel.active{ display:block; animation: panelIn .65s cubic-bezier(.16,1,.3,1) both; }
+  @keyframes panelIn{
+    from{ opacity:0; transform: translateY(18px) scale(.985); filter: blur(6px); }
+    to  { opacity:1; transform:none; filter:none; }
+  }
+
+  /* Keep both panels a similar height so toggling doesn't jolt the page */
+  @media (min-width: 1024px){
+    .case-grid{ min-height: 900px; }
+  }
+
+  .tab-btn{ transition: color .3s ease, background-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1); }
+  .tab-btn:hover{ transform: scale(1.03); }
+  .tab-indicator{ transition: transform .5s cubic-bezier(.16,1,.3,1), width .5s cubic-bezier(.16,1,.3,1); }
+
+  /* Browser chrome */
+  .chrome-dot{ width:10px; height:10px; border-radius:99px; }
+
+  /* --- "Before" mockup: deliberately generic 2009 local-business site --- */
+  .old-site{
+    background:#ffffff;
+    color:#111;
+    font-family: "Times New Roman", Times, serif;
+    line-height:1.45;
+  }
+  .old-site a{ color:#0000EE; text-decoration:underline; }
+  .old-site .old-banner{
+    background:#e9e9e9;
+    border-bottom:2px solid #999;
+    text-align:center;
+  }
+  .old-site .old-nav{
+    background:#f3f3f3;
+    border-bottom:1px solid #bbb;
+    font-size:12px;
+    text-align:center;
+  }
+  .old-site .imgbox{
+    background:
+      repeating-linear-gradient(45deg,#e4e4e4 0 8px,#efefef 8px 16px);
+    border:1px solid #c4c4c4;
+    color:#8a8a8a;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-family: Arial, sans-serif;
+  }
+  .old-site hr{ border:0; border-top:1px solid #ccc; margin:10px 0; }
+
+  /* --- "After" mockup: Dark Conservatory --- */
+  .new-site{
+    background:
+      radial-gradient(120% 90% at 50% -20%, rgba(201,162,39,.16), transparent 60%),
+      #12100C;
+    color:#EDE6D6;
+    font-family: Inter, sans-serif;
+  }
+  .new-site .serif{ font-family:"Playfair Display", Georgia, serif; }
+  .brass-rule{
+    height:1px;
+    background: linear-gradient(90deg, transparent, rgba(201,162,39,.85), transparent);
+  }
+  .brass-btn{
+    background: linear-gradient(180deg,#E3C464,#B8901F);
+    color:#1A1408;
+    box-shadow: 0 8px 22px -10px rgba(201,162,39,.85);
+  }
+  .keys{ display:flex; height:100%; }
+  .keys i{ flex:1; background:#F4EFE2; border-right:1px solid #c9c1ae; position:relative; }
+  .keys i.b::after{
+    content:"";
+    position:absolute; top:0; right:-22%;
+    width:44%; height:62%;
+    background:#171310;
+    z-index:2;
+  }
+
+  /* ---------- Metric dials ---------- */
+  .dial circle.track{ stroke: rgba(255,255,255,.09); }
+  .dial circle.value{
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 1.8s cubic-bezier(.16,1,.3,1);
+  }
+
+  /* ---------- Form ---------- */
+  .field{
+    background: rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+    transition: border-color .3s ease, box-shadow .3s ease, background-color .3s ease;
+  }
+  .field:focus{
+    outline:none;
+    border-color: rgba(0,242,254,.6);
+    background: rgba(0,242,254,.045);
+    box-shadow: 0 0 0 4px rgba(0,242,254,.1);
+  }
+  .field::placeholder{ color: rgba(255,255,255,.32); }
+  select.field option{ background:#101014; color:#fff; }
+  .field.err{ border-color:#FF6B6B; box-shadow:0 0 0 4px rgba(255,107,107,.12); }
+
+  /* Scrolled nav. Defined here rather than toggled as Tailwind utility classes:
+     the Tailwind CDN build watches the DOM and reacts to class mutations, and
+     this toggles on every scroll past the threshold. */
+  #nav.nav-solid{
+    background: rgba(10,10,10,.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,.07);
+  }
+
+  /* Nav underline */
+  .navlink{ position:relative; }
+  .navlink::after{
+    content:""; position:absolute; left:0; bottom:-6px;
+    height:1px; width:0; background: var(--grad);
+    transition: width .4s cubic-bezier(.16,1,.3,1);
+  }
+  .navlink:hover::after{ width:100%; }
+
+  /* ============ HERO MOTION LAYER ============ */
+
+  /* Scroll progress rail */
+  #progress{
+    position:fixed; top:0; left:0; height:2px; width:0;
+    background: var(--grad);
+    box-shadow: 0 0 16px rgba(0,242,254,.9);
+    z-index:70;
+    transition: width .12s linear;
+    pointer-events:none;
+  }
+
+  /* Soft light that follows the cursor */
+  #orb{
+    position:fixed; top:0; left:0;
+    width:520px; height:520px; margin:-260px 0 0 -260px;
+    border-radius:50%;
+    pointer-events:none; z-index:1;
+    background: radial-gradient(circle, rgba(0,242,254,.11), rgba(123,92,255,.06) 44%, transparent 68%);
+    opacity:0;
+    transition: opacity .8s ease;
+    will-change: transform;
+  }
+
+  /* Headline: line-by-line mask reveal */
+  .line-mask{
+    display:block;
+    overflow:hidden;
+    padding-bottom:.1em;
+    margin-bottom:-.1em;
+  }
+  .line-inner{
+    display:block;
+    transform: translateY(112%);
+    opacity:0;
+    transition: transform 1.15s cubic-bezier(.16,1,.3,1), opacity .9s cubic-bezier(.16,1,.3,1);
+    transition-delay: var(--d, 0ms);
+    will-change: transform;
+  }
+  .lit .line-inner{ transform: translateY(0); opacity:1; }
+
+  /* Living gradient for the focal words */
+  .grad-flow{
+    background: linear-gradient(100deg,#00F2FE,#4FACFE,#7B5CFF,#4FACFE,#00F2FE);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    animation: flow 9s linear infinite;
+  }
+  @keyframes flow{ to{ background-position: 300% 0; } }
+
+  /* Cyan scan sweeping down the grid */
+  .scanline{
+    position:absolute; left:0; right:0; top:0;
+    height:180px;
+    background: linear-gradient(to bottom, transparent, rgba(0,242,254,.085), rgba(0,242,254,.02), transparent);
+    animation: scan 9s cubic-bezier(.55,0,.45,1) infinite;
+    pointer-events:none;
+  }
+  @keyframes scan{
+    0%   { transform: translateY(-200px); opacity:0; }
+    12%  { opacity:1; }
+    88%  { opacity:1; }
+    100% { transform: translateY(105vh); opacity:0; }
+  }
+
+  /* Rotating conic ring around the availability badge */
+  .ring{ position:relative; border-radius:999px; overflow:hidden; padding:1px; }
+  .ring-spin{
+    position:absolute; left:50%; top:50%;
+    width:240%; aspect-ratio:1/1;
+    margin:-120% 0 0 -120%;
+    background: conic-gradient(from 0deg, transparent 0 58%, rgba(0,242,254,.95) 74%, rgba(123,92,255,.9) 88%, transparent 100%);
+    animation: spin 5s linear infinite;
+  }
+  @keyframes spin{ to{ transform: rotate(360deg); } }
+
+  /* Parallax layers */
+  .plx{ will-change: transform; }
+
+  /* Hero content drifts and dissolves on scroll */
+  #heroInner{ will-change: transform, opacity; }
+
+  /* Stat cells light up */
+  .stat{ position:relative; transition: background-color .5s ease; }
+  .stat::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:1px;
+    background: var(--grad);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .7s cubic-bezier(.16,1,.3,1);
+  }
+  .stat:hover{ background-color: rgba(0,242,254,.045); }
+  .stat:hover::before{ transform: scaleX(1); }
+
+  /* Shared card lift */
+  .lift{ transition: transform .55s cubic-bezier(.16,1,.3,1), box-shadow .55s ease, border-color .55s ease; }
+  .lift:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 34px 74px -36px rgba(0,242,254,.5);
+    border-color: rgba(0,242,254,.26);
+  }
+
+  /* Eyebrow rules draw themselves in */
+  .eyebrow-line{ width:0; transition: width .9s cubic-bezier(.16,1,.3,1) .15s; }
+  .reveal.in .eyebrow-line{ width:2.5rem; }
+
+  /* Scroll cue */
+  @keyframes cue{
+    0%,100%{ transform: scaleY(.35); opacity:.35; transform-origin: top; }
+    50%    { transform: scaleY(1);   opacity:1;   transform-origin: top; }
+  }
+  .cue-line{ animation: cue 2.4s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration:.001ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.001ms !important;
+    }
+    .reveal{ opacity:1; transform:none; }
+    .line-inner{ transform:none !important; opacity:1 !important; }
+    .eyebrow-line{ width:2.5rem; }
+    #particles, .scanline, .ring-spin, #orb{ display:none !important; }
+  }
+</style>
+</head>
+
+<body class="font-body bg-ink text-white antialiased grain">
+
+<div id="progress"></div>
+<div id="orb"></div>
+
+<!-- ============================ NAV ============================ -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+  <div class="max-w-screen mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-20">
+
+      <a href="#top" class="group flex items-center gap-3">
+        <div class="relative w-10 h-10 rounded-xl grad-bg grid place-items-center shadow-[0_8px_28px_-10px_rgba(0,242,254,.8)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+          <span class="font-mono text-[15px] font-bold text-[#04070A]">&gt;_</span>
+        </div>
+        <div class="leading-none">
+          <div class="font-display font-bold tracking-tight text-[15px]">Wright Click</div>
+          <div class="text-[10px] uppercase tracking-[.32em] text-white/40 mt-1">Studios</div>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-10 text-[13.5px] text-white/65">
+        <a href="#work"     class="navlink hover:text-white transition-colors duration-300">Before &amp; After</a>
+        <a href="#services" class="navlink hover:text-white transition-colors duration-300">What We Build</a>
+        <a href="#value"    class="navlink hover:text-white transition-colors duration-300">The Offer</a>
+        <a href="#process"  class="navlink hover:text-white transition-colors duration-300">Process</a>
+      </nav>
+
+      <div class="hidden lg:block">
+        <a href="#contact" class="btn btn-primary sheen px-6 py-3 text-[13.5px]">
+          Claim Your Free Preview
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <button id="menuBtn" aria-label="Open menu" aria-expanded="false"
+        class="lg:hidden w-11 h-11 rounded-xl glass grid place-items-center transition-transform duration-300 hover:scale-105">
+        <svg id="menuIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden px-6 pb-6">
+    <div class="glass-deep rounded-3xl p-6 flex flex-col gap-1">
+      <a href="#work"     class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">Before &amp; After</a>
+      <a href="#services" class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">What We Build</a>
+      <a href="#value"    class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">The Offer</a>
+      <a href="#process"  class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">Process</a>
+      <a href="#contact"  class="mob-link btn btn-primary sheen mt-4 py-3.5">Claim Your Free Preview</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section id="top" class="relative min-h-[100svh] flex items-center overflow-hidden pt-32 pb-24">
+
+  <!-- ambient: each .plx layer drifts against the cursor at its own depth -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="plx absolute inset-0" data-depth="12">
+      <div class="absolute inset-0 grid-lines opacity-70"></div>
+    </div>
+    <div class="plx absolute inset-0" data-depth="30">
+      <div class="aurora a-cyan drift-slow w-[46rem] h-[46rem] -top-40 -left-40"></div>
+    </div>
+    <div class="plx absolute inset-0" data-depth="-38">
+      <div class="aurora a-violet drift-slower w-[40rem] h-[40rem] top-8 -right-32" style="opacity:.9"></div>
+    </div>
+    <div class="plx absolute inset-0" data-depth="22">
+      <div class="aurora a-azure drift-slow w-[34rem] h-[34rem] bottom-[-14rem] left-1/3" style="opacity:.75"></div>
+    </div>
+
+    <canvas id="particles" class="absolute inset-0 w-full h-full"></canvas>
+    <div class="scanline"></div>
+    <div class="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-ink to-transparent"></div>
+  </div>
+
+  <div class="relative max-w-screen mx-auto px-6 lg:px-10 w-full">
+    <div id="heroInner" class="max-w-5xl">
+
+      <div class="reveal ring inline-block mb-9" style="--d:0ms">
+        <span class="ring-spin"></span>
+        <div class="relative flex items-center gap-3 rounded-full bg-ink/95 px-4 py-2">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-70"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan"></span>
+          </span>
+          <span class="text-[11.5px] uppercase tracking-[.24em] text-white/70">Now booking · 2 build slots left this month</span>
+        </div>
+      </div>
+
+      <h1 class="hl font-display font-bold tracking-[-.045em] leading-[.92] text-[clamp(2.9rem,8.2vw,7.4rem)]">
+        <span class="line-mask"><span class="line-inner" style="--d:80ms">We Give Local</span></span>
+        <span class="line-mask"><span class="line-inner" style="--d:190ms">Businesses The</span></span>
+        <span class="line-mask"><span class="line-inner" style="--d:300ms"><span class="grad-flow">Website</span> They</span></span>
+        <span class="line-mask"><span class="line-inner" style="--d:410ms">Actually Deserve.</span></span>
+      </h1>
+
+      <p class="reveal mt-9 text-[clamp(1.02rem,1.5vw,1.32rem)] leading-relaxed text-white/55 max-w-2xl font-light" style="--d:620ms">
+        Wright Click Studios builds ultra-premium, high-end digital real estate for ambitious local brands —
+        hand-coded experiences with the polish of a national campaign, engineered for the street you actually
+        do business on.
+      </p>
+
+      <div class="reveal mt-11 flex flex-col sm:flex-row gap-4" style="--d:720ms">
+        <a href="#contact" class="btn btn-primary sheen magnetic px-8 py-4 text-[15px]">
+          Claim Your Custom Design Preview
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#work" class="btn btn-ghost magnetic px-8 py-4 text-[15px]">
+          See The Transformation
+        </a>
+      </div>
+
+      <!-- stat strip -->
+      <div class="reveal mt-20 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/[.07] bg-white/[.04] max-w-3xl" style="--d:820ms">
+        <div class="stat bg-ink/80 px-5 py-6">
+          <div class="font-display text-3xl font-bold grad-text"><span class="counter" data-count="100">0</span>%</div>
+          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Hand-coded</div>
+        </div>
+        <div class="stat bg-ink/80 px-5 py-6">
+          <div class="font-display text-3xl font-bold grad-text">&lt;<span class="counter" data-count="1">0</span>s</div>
+          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Load time</div>
+        </div>
+        <div class="stat bg-ink/80 px-5 py-6">
+          <div class="font-display text-3xl font-bold grad-text">$<span class="counter" data-count="500">0</span></div>
+          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Ceiling, not floor</div>
+        </div>
+        <div class="stat bg-ink/80 px-5 py-6">
+          <div class="font-display text-3xl font-bold grad-text"><span class="counter" data-count="0">0</span></div>
+          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Clunky builders</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/25">
+    <span class="text-[10px] uppercase tracking-[.3em]">Scroll</span>
+    <div class="cue-line w-px h-12 bg-gradient-to-b from-cyan to-transparent"></div>
+  </div>
+</section>
+
+<!-- ============================ MARQUEE ============================ -->
+<section class="relative border-y border-white/[.06] py-6 bg-ink2/60 overflow-hidden marquee">
+  <div class="fade-x">
+    <div class="marquee-track flex gap-14 w-max whitespace-nowrap text-[12px] uppercase tracking-[.32em] text-white/30 font-medium">
+      <span>Piano Studios</span><span class="text-cyan/50">✦</span>
+      <span>Barbershops</span><span class="text-cyan/50">✦</span>
+      <span>Law Offices</span><span class="text-cyan/50">✦</span>
+      <span>Med Spas</span><span class="text-cyan/50">✦</span>
+      <span>Contractors</span><span class="text-cyan/50">✦</span>
+      <span>Coffee Roasters</span><span class="text-cyan/50">✦</span>
+      <span>Private Tutors</span><span class="text-cyan/50">✦</span>
+      <span>Boutique Fitness</span><span class="text-cyan/50">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span>Piano Studios</span><span class="text-cyan/50">✦</span>
+      <span>Barbershops</span><span class="text-cyan/50">✦</span>
+      <span>Law Offices</span><span class="text-cyan/50">✦</span>
+      <span>Med Spas</span><span class="text-cyan/50">✦</span>
+      <span>Contractors</span><span class="text-cyan/50">✦</span>
+      <span>Coffee Roasters</span><span class="text-cyan/50">✦</span>
+      <span>Private Tutors</span><span class="text-cyan/50">✦</span>
+      <span>Boutique Fitness</span><span class="text-cyan/50">✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CASE STUDY ============================ -->
+<section id="work" class="relative py-28 lg:py-40 overflow-hidden">
+  <div class="aurora a-azure drift-slower w-[38rem] h-[38rem] top-1/4 -left-56" style="opacity:.5"></div>
+
+  <div class="relative max-w-screen mx-auto px-6 lg:px-10">
+
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+      <div class="max-w-2xl">
+        <div class="reveal flex items-center gap-3 mb-6">
+          <span class="eyebrow-line h-px grad-bg"></span>
+          <span class="text-[11px] uppercase tracking-[.3em] text-cyan/80">Before &amp; After</span>
+        </div>
+        <h2 class="reveal font-display font-bold tracking-[-.035em] leading-[1.02] text-[clamp(2.1rem,5.2vw,4.1rem)]" style="--d:80ms">
+          Same business.<br /><span class="grad-flow">Completely different answer.</span>
+        </h2>
+        <p class="reveal mt-6 text-white/50 text-lg font-light leading-relaxed" style="--d:150ms">
+          Here's a sample build for a music studio — the kind of local business that's excellent at what
+          it does and invisible online. Same services, same prices, same owner. The only thing that
+          changed is whether it looks worth calling.
+        </p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="reveal" style="--d:220ms">
+        <div id="tabs" class="relative glass rounded-full p-1.5 flex gap-1 w-full sm:w-auto" role="tablist" aria-label="Before and after comparison">
+          <span id="tabIndicator" class="tab-indicator absolute top-1.5 bottom-1.5 left-0 rounded-full grad-bg opacity-95"></span>
+          <button class="tab-btn relative z-10 px-6 sm:px-8 py-3 rounded-full text-[13px] font-semibold text-white/55 flex-1"
+                  role="tab" aria-selected="false" aria-controls="panel-before" id="tab-before" data-tab="before">
+            Before
+          </button>
+          <button class="tab-btn relative z-10 px-6 sm:px-8 py-3 rounded-full text-[13px] font-semibold text-[#04070A] flex-1"
+                  role="tab" aria-selected="true" aria-controls="panel-after" id="tab-after" data-tab="after">
+            After
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- PANEL: BEFORE ---------- -->
+    <div id="panel-before" class="panel" role="tabpanel" aria-labelledby="tab-before" tabindex="0">
+      <div class="case-grid grid lg:grid-cols-[1.35fr_1fr] gap-8 items-start">
+
+        <!-- Browser mock: old site -->
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-[#1a1a1c] shadow-[0_50px_120px_-60px_rgba(0,0,0,.9)]">
+          <div class="flex items-center gap-2 px-4 h-11 bg-[#232326] border-b border-black/40">
+            <span class="chrome-dot bg-[#FF5F57]"></span>
+            <span class="chrome-dot bg-[#FEBC2E]"></span>
+            <span class="chrome-dot bg-[#28C840]"></span>
+            <div class="ml-3 flex-1 max-w-sm h-6 rounded-md bg-[#141416] border border-white/5 grid place-items-center">
+              <span class="font-mono text-[10.5px] text-white/35">thepianostudio.net/home.html</span>
+            </div>
+            <span class="text-[10px] uppercase tracking-[.18em] text-white/25 hidden sm:block">2009 · Legacy</span>
+          </div>
+
+          <div class="old-site p-0">
+            <div class="old-banner py-4 px-3">
+              <div style="font-size:22px; font-weight:bold;">The Piano Studio</div>
+              <div style="font-size:12px; color:#444;">Piano Lessons &nbsp;|&nbsp; All Ages &nbsp;|&nbsp; Call Today!</div>
+            </div>
+            <div class="old-nav py-2 px-3">
+              <a href="#work" onclick="return false">Home</a> |
+              <a href="#work" onclick="return false">About</a> |
+              <a href="#work" onclick="return false">Rates</a> |
+              <a href="#work" onclick="return false">Contact</a> |
+              <a href="#work" onclick="return false">Links</a>
+            </div>
+
+            <div class="p-4 sm:p-6">
+              <div style="text-align:center; font-size:15px; font-weight:bold; margin-bottom:8px;">
+                Welcome to my web site!
+              </div>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <div class="imgbox w-full sm:w-40 h-24 shrink-0">photo1.jpg</div>
+                <div style="font-size:13px;">
+                  <p style="margin:0 0 8px;">
+                    Hello and welcome. We have been teaching piano lessons for many years to students
+                    of all ages and skill levels. Lessons are held at our studio. Please call for
+                    availability as spots fill up fast.
+                  </p>
+                  <p style="margin:0;">
+                    Rates: $30 per half hour. Recitals are held twice a year.
+                    <a href="#work" onclick="return false">Click here</a> for more info.
+                  </p>
+                </div>
+              </div>
+              <hr />
+
+              <div style="font-size:14px; font-weight:bold; margin-bottom:6px;">News &amp; Announcements</div>
+              <ul style="font-size:12.5px; margin:0 0 10px; padding-left:20px;">
+                <li>Summer recital sign-up sheet is posted in the studio. (06/2010)</li>
+                <li>No lessons the week of Thanksgiving. (11/2009)</li>
+                <li>New students welcome — please call before stopping by. (2008)</li>
+              </ul>
+
+              <hr />
+
+              <div style="font-size:14px; font-weight:bold; margin-bottom:6px;">Lesson Rates</div>
+              <table style="border-collapse:collapse; font-size:12.5px; width:100%; max-width:420px;">
+                <tr style="background:#eee;">
+                  <td style="border:1px solid #bbb; padding:4px 8px;"><b>Length</b></td>
+                  <td style="border:1px solid #bbb; padding:4px 8px;"><b>Price</b></td>
+                  <td style="border:1px solid #bbb; padding:4px 8px;"><b>Notes</b></td>
+                </tr>
+                <tr>
+                  <td style="border:1px solid #bbb; padding:4px 8px;">30 min</td>
+                  <td style="border:1px solid #bbb; padding:4px 8px;">$30</td>
+                  <td style="border:1px solid #bbb; padding:4px 8px;">Beginners</td>
+                </tr>
+                <tr>
+                  <td style="border:1px solid #bbb; padding:4px 8px;">45 min</td>
+                  <td style="border:1px solid #bbb; padding:4px 8px;">$42</td>
+                  <td style="border:1px solid #bbb; padding:4px 8px;">Call to ask</td>
+                </tr>
+                <tr>
+                  <td style="border:1px solid #bbb; padding:4px 8px;">60 min</td>
+                  <td style="border:1px solid #bbb; padding:4px 8px;">$55</td>
+                  <td style="border:1px solid #bbb; padding:4px 8px;">Advanced only</td>
+                </tr>
+              </table>
+
+              <hr />
+
+              <div class="flex flex-col sm:flex-row gap-4 items-start">
+                <div class="imgbox w-28 h-20 shrink-0">studio2.jpg</div>
+                <div style="font-size:12.5px;">
+                  <b>Contact:</b> Call or email &nbsp;·&nbsp;
+                  <a href="#work" onclick="return false">info@thepianostudio.net</a><br />
+                  <b>Hours:</b> Mon–Thu 3pm-8pm<br />
+                  <b>Location:</b> Home studio — address given after first call.
+                </div>
+              </div>
+
+              <hr />
+              <div style="text-align:center; font-size:11px; color:#777;">
+                Last updated: 03/14/2011 &nbsp;|&nbsp; Visitors: 004192 &nbsp;|&nbsp; Best viewed at 1024x768
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diagnosis -->
+        <div class="space-y-4">
+          <div class="glass rounded-2xl p-6 grad-border">
+            <div class="text-[11px] uppercase tracking-[.26em] text-white/40 mb-4">What's Costing Them Customers</div>
+            <ul class="space-y-3.5 text-[14.5px] text-white/60 font-light">
+              <li class="flex gap-3"><span class="text-[#FF6B6B] mt-.5">✕</span> Looks like a typed document, not a business</li>
+              <li class="flex gap-3"><span class="text-[#FF6B6B] mt-.5">✕</span> Have to pinch and zoom to read it on a phone</li>
+              <li class="flex gap-3"><span class="text-[#FF6B6B] mt-.5">✕</span> Prices buried in a paragraph, no way to book</li>
+              <li class="flex gap-3"><span class="text-[#FF6B6B] mt-.5">✕</span> Nothing telling a visitor what to do next</li>
+              <li class="flex gap-3"><span class="text-[#FF6B6B] mt-.5">✕</span> Old dates that make it look closed down</li>
+              <li class="flex gap-3"><span class="text-[#FF6B6B] mt-.5">✕</span> A great business that comes across as cheap</li>
+            </ul>
+          </div>
+
+          <div class="glass rounded-2xl p-6">
+            <p class="text-white/45 text-[14.5px] font-light leading-relaxed italic">
+              "This is the one we see most. The business is the best in town, and the website is
+              quietly telling everyone it's the cheapest."
+            </p>
+            <div class="mt-4 text-[11px] uppercase tracking-[.22em] text-white/30">— What We Fix First</div>
+          </div>
+
+          <button class="btn btn-ghost w-full py-3.5 text-[13.5px]" data-goto="after">
+            See The Wright Click Way
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- PANEL: AFTER ---------- -->
+    <div id="panel-after" class="panel active" role="tabpanel" aria-labelledby="tab-after" tabindex="0">
+      <div class="case-grid grid lg:grid-cols-[1.35fr_1fr] gap-8 items-start">
+
+        <!-- Browser mock: new site -->
+        <div class="relative rounded-2xl overflow-hidden glass-deep shadow-[0_60px_140px_-60px_rgba(0,242,254,.45)]">
+          <div class="flex items-center gap-2 px-4 h-11 bg-white/[.04] border-b border-white/[.07]">
+            <span class="chrome-dot bg-[#FF5F57]"></span>
+            <span class="chrome-dot bg-[#FEBC2E]"></span>
+            <span class="chrome-dot bg-[#28C840]"></span>
+            <div class="ml-3 flex-1 max-w-sm h-6 rounded-md bg-black/40 border border-white/10 grid place-items-center">
+              <span class="font-mono text-[10.5px] text-white/45">thepianostudio.com</span>
+            </div>
+            <span class="text-[10px] uppercase tracking-[.18em] text-cyan/70 hidden sm:block">The Rebuild</span>
+          </div>
+
+          <div class="new-site">
+            <!-- nav -->
+            <div class="flex items-center justify-between px-6 sm:px-9 py-5">
+              <div class="serif text-[15px] tracking-wide" style="color:#E8DCC0;">The Piano Studio</div>
+              <div class="hidden sm:flex gap-7 text-[11px] uppercase tracking-[.2em]" style="color:rgba(237,230,214,.55)">
+                <span>Lessons</span><span>Studio</span><span>Recitals</span>
+              </div>
+              <div class="brass-btn hidden sm:block text-[10.5px] font-semibold px-4 py-2 rounded-full uppercase tracking-[.14em]">Book a Trial</div>
+            </div>
+            <div class="brass-rule"></div>
+
+            <!-- hero -->
+            <div class="px-6 sm:px-9 pt-11 pb-9 text-center relative">
+              <div class="text-[10px] uppercase tracking-[.34em] mb-5" style="color:rgba(201,162,39,.9)">Private Lessons · All Ages</div>
+              <div class="serif leading-[1.06] text-[clamp(1.7rem,3.6vw,2.9rem)]" style="color:#F3EBD8;">
+                Where every student learns<br /><em style="color:#D8B45C;">to really play.</em>
+              </div>
+              <p class="mt-5 text-[12.5px] font-light max-w-md mx-auto" style="color:rgba(237,230,214,.6)">
+                Classically trained instruction with a modern ear. Real songs and real progress,
+                from the very first lesson.
+              </p>
+              <div class="mt-7 flex items-center justify-center gap-3">
+                <div class="brass-btn text-[11px] font-semibold px-5 py-2.5 rounded-full uppercase tracking-[.14em]">Reserve Your Seat</div>
+                <div class="text-[11px] px-5 py-2.5 rounded-full uppercase tracking-[.14em]" style="border:1px solid rgba(201,162,39,.45); color:rgba(237,230,214,.8)">Hear a Student</div>
+              </div>
+
+              <!-- piano keys motif -->
+              <div class="mt-9 h-11 rounded-t-md overflow-hidden opacity-90" style="box-shadow:0 -10px 40px -20px rgba(201,162,39,.9)">
+                <div class="keys">
+                  <i class="b"></i><i class="b"></i><i></i><i class="b"></i><i class="b"></i><i class="b"></i><i></i>
+                  <i class="b"></i><i class="b"></i><i></i><i class="b"></i><i class="b"></i><i class="b"></i><i></i>
+                  <i class="b"></i><i class="b"></i><i></i><i class="b"></i><i class="b"></i><i class="b"></i><i></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- proof row -->
+            <div class="grid grid-cols-3 border-t" style="border-color:rgba(201,162,39,.22)">
+              <div class="px-4 py-5 text-center border-r" style="border-color:rgba(201,162,39,.16)">
+                <div class="serif text-xl" style="color:#D8B45C;">20+</div>
+                <div class="text-[9.5px] uppercase tracking-[.2em] mt-1" style="color:rgba(237,230,214,.45)">Years Teaching</div>
+              </div>
+              <div class="px-4 py-5 text-center border-r" style="border-color:rgba(201,162,39,.16)">
+                <div class="serif text-xl" style="color:#D8B45C;">2×</div>
+                <div class="text-[9.5px] uppercase tracking-[.2em] mt-1" style="color:rgba(237,230,214,.45)">Yearly Recitals</div>
+              </div>
+              <div class="px-4 py-5 text-center">
+                <div class="serif text-xl" style="color:#D8B45C;">All Ages</div>
+                <div class="text-[9.5px] uppercase tracking-[.2em] mt-1" style="color:rgba(237,230,214,.45)">Skill Levels</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Build sheet -->
+        <div class="space-y-4">
+
+          <div class="glass-deep rounded-2xl p-6 spotlight grad-border">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="w-7 h-7 rounded-lg grad-bg grid place-items-center text-[#04070A] text-[13px] font-bold">✓</span>
+              <div class="text-[11px] uppercase tracking-[.26em] text-white/45">What Changed</div>
+            </div>
+
+            <div class="space-y-5">
+              <div>
+                <div class="font-display font-semibold text-[15px] mb-1">A Room, Not A Page</div>
+                <p class="text-[13.5px] text-white/50 font-light leading-relaxed">
+                  Deep espresso and warm ivory — it feels like walking into a recital hall instead of a
+                  school gym. Calm, uncluttered, and expensive-looking without shouting.
+                </p>
+              </div>
+              <div class="h-px bg-white/[.07]"></div>
+              <div>
+                <div class="font-display font-semibold text-[15px] mb-1">Real Brass, Not Gold Paint</div>
+                <p class="text-[13.5px] text-white/50 font-light leading-relaxed">
+                  An aged brass tone on the buttons, the thin dividing lines, and the piano keys across
+                  the middle. It reads like a real metal finish, not a cheap gold gradient.
+                </p>
+              </div>
+              <div class="h-px bg-white/[.07]"></div>
+              <div>
+                <div class="font-display font-semibold text-[15px] mb-1">Lettering With A Voice</div>
+                <p class="text-[13.5px] text-white/50 font-light leading-relaxed">
+                  An elegant italic for the headline and a clean, plain typeface for everything else —
+                  so your eye knows instantly what matters most on the page.
+                </p>
+              </div>
+              <div class="h-px bg-white/[.07]"></div>
+              <div>
+                <div class="font-display font-semibold text-[15px] mb-1">Booking Never More Than A Tap Away</div>
+                <p class="text-[13.5px] text-white/50 font-light leading-relaxed">
+                  A "book a lesson" button before you scroll, and again everywhere you stop. Proof they're
+                  established sits right up top, where a nervous first-timer will see it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- metric dials -->
+          <div class="glass rounded-2xl p-6">
+            <div class="text-[11px] uppercase tracking-[.26em] text-white/40 mb-5">The Standard We Build To</div>
+            <div class="grid grid-cols-3 gap-3">
+              <div class="text-center">
+                <svg class="dial w-full max-w-[74px] mx-auto" viewBox="0 0 120 120">
+                  <circle class="track" cx="60" cy="60" r="52" fill="none" stroke-width="9"/>
+                  <circle class="value" cx="60" cy="60" r="52" fill="none" stroke-width="9" stroke="url(#g1)"
+                          stroke-dasharray="326.7" stroke-dashoffset="326.7" data-pct="100"/>
+                  <defs>
+                    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#00F2FE"/><stop offset="100%" stop-color="#7B5CFF"/>
+                    </linearGradient>
+                  </defs>
+                  <text x="60" y="67" text-anchor="middle" class="fill-white font-display" font-size="26" font-weight="700">100</text>
+                </svg>
+                <div class="mt-2 text-[10px] uppercase tracking-[.16em] text-white/40">Performance</div>
+              </div>
+              <div class="text-center">
+                <svg class="dial w-full max-w-[74px] mx-auto" viewBox="0 0 120 120">
+                  <circle class="track" cx="60" cy="60" r="52" fill="none" stroke-width="9"/>
+                  <circle class="value" cx="60" cy="60" r="52" fill="none" stroke-width="9" stroke="url(#g1)"
+                          stroke-dasharray="326.7" stroke-dashoffset="326.7" data-pct="100"/>
+                  <text x="60" y="67" text-anchor="middle" class="fill-white font-display" font-size="26" font-weight="700">100</text>
+                </svg>
+                <div class="mt-2 text-[10px] uppercase tracking-[.16em] text-white/40">Accessibility</div>
+              </div>
+              <div class="text-center">
+                <svg class="dial w-full max-w-[74px] mx-auto" viewBox="0 0 120 120">
+                  <circle class="track" cx="60" cy="60" r="52" fill="none" stroke-width="9"/>
+                  <circle class="value" cx="60" cy="60" r="52" fill="none" stroke-width="9" stroke="url(#g1)"
+                          stroke-dasharray="326.7" stroke-dashoffset="326.7" data-pct="98"/>
+                  <text x="60" y="67" text-anchor="middle" class="fill-white font-display" font-size="26" font-weight="700">98</text>
+                </svg>
+                <div class="mt-2 text-[10px] uppercase tracking-[.16em] text-white/40">SEO</div>
+              </div>
+            </div>
+            <div class="mt-5 pt-5 border-t border-white/[.07] flex items-center justify-between text-[12px]">
+              <span class="text-white/40">Loads on a phone in</span>
+              <span class="font-mono text-cyan">under a second</span>
+            </div>
+            <div class="mt-2.5 flex items-center justify-between text-[12px]">
+              <span class="text-white/40">Readable on every screen</span>
+              <span class="font-mono text-cyan">phone to desktop</span>
+            </div>
+          </div>
+
+          <button class="btn btn-ghost w-full py-3.5 text-[13.5px]" data-goto="before">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            Back To The Old Way
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVICES ============================ -->
+<section id="services" class="relative py-28 lg:py-36 border-t border-white/[.06]">
+  <div class="max-w-screen mx-auto px-6 lg:px-10">
+
+    <div class="max-w-2xl mb-16">
+      <div class="reveal flex items-center gap-3 mb-6">
+        <span class="eyebrow-line h-px grad-bg"></span>
+        <span class="text-[11px] uppercase tracking-[.3em] text-cyan/80">What We Build</span>
+      </div>
+      <h2 class="reveal font-display font-bold tracking-[-.035em] leading-[1.04] text-[clamp(2rem,4.6vw,3.5rem)]" style="--d:80ms">
+        Every site is a <span class="grad-text">custom instrument.</span>
+      </h2>
+      <p class="reveal mt-5 text-white/50 text-lg font-light" style="--d:150ms">
+        No templates. No cookie-cutter website builders. Everything on the page is made for your
+        business, and nobody else's.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="reveal spotlight glass rounded-3xl p-8 grad-border lift" style="--d:0ms">
+        <div class="w-12 h-12 rounded-2xl glass grid place-items-center mb-6 text-cyan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-xl mb-3">Built From Scratch</h3>
+        <p class="text-white/50 text-[14.5px] font-light leading-relaxed">
+          Your site is made for your business from a blank page — not a stock template with your
+          logo dropped on top. That's why it won't look like every other shop in town.
+        </p>
+      </div>
+
+      <div class="reveal spotlight glass rounded-3xl p-8 grad-border lift" style="--d:80ms">
+        <div class="w-12 h-12 rounded-2xl glass grid place-items-center mb-6 text-cyan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="19" cy="13" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="10" cy="20" r="2.5"/><path d="M12 2a10 10 0 100 20"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-xl mb-3">One Consistent Look</h3>
+        <p class="text-white/50 text-[14.5px] font-light leading-relaxed">
+          We settle on your colors, your lettering, and your photos — then use them everywhere. Your
+          website, your sign out front, and your Facebook page finally match.
+        </p>
+      </div>
+
+      <div class="reveal spotlight glass rounded-3xl p-8 grad-border lift" style="--d:160ms">
+        <div class="w-12 h-12 rounded-2xl glass grid place-items-center mb-6 text-cyan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-xl mb-3">Built To Get You Calls</h3>
+        <p class="text-white/50 text-[14.5px] font-light leading-relaxed">
+          A pretty website that never rings the phone is worthless. Every page is built to walk a
+          visitor toward one thing: calling you, booking you, or asking for a price.
+        </p>
+      </div>
+
+      <div class="reveal spotlight glass rounded-3xl p-8 grad-border lift" style="--d:0ms">
+        <div class="w-12 h-12 rounded-2xl glass grid place-items-center mb-6 text-cyan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-xl mb-3">Perfect On A Phone</h3>
+        <p class="text-white/50 text-[14.5px] font-light leading-relaxed">
+          Most people will find you on their phone, one-handed, sitting in a parking lot. We build
+          for that screen first — nothing tiny, nothing sideways, nothing cut off.
+        </p>
+      </div>
+
+      <div class="reveal spotlight glass rounded-3xl p-8 grad-border lift" style="--d:80ms">
+        <div class="w-12 h-12 rounded-2xl glass grid place-items-center mb-6 text-cyan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-xl mb-3">Easy To Find On Google</h3>
+        <p class="text-white/50 text-[14.5px] font-light leading-relaxed">
+          We set things up so Google knows exactly who you are, what you do, and what town you're
+          in — using the same words your neighbors type when they go looking for you.
+        </p>
+      </div>
+
+      <div class="reveal spotlight glass rounded-3xl p-8 grad-border lift" style="--d:160ms">
+        <div class="w-12 h-12 rounded-2xl glass grid place-items-center mb-6 text-cyan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3.5v5c0 4.6-3.1 8.5-7.5 9.5-4.4-1-7.5-4.9-7.5-9.5v-5L12 3z"/><path d="M9.5 12l1.8 1.8 3.4-3.4"/></svg>
+        </div>
+        <h3 class="font-display font-semibold text-xl mb-3">It's Yours To Keep</h3>
+        <p class="text-white/50 text-[14.5px] font-light leading-relaxed">
+          The website and its web address belong to you from day one. No monthly fee you can never
+          get out of, and nobody holding your site hostage if you ever want to walk away.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ VALUE / GUARANTEE ============================ -->
+<section id="value" class="relative py-28 lg:py-40 overflow-hidden">
+  <div class="aurora a-violet drift-slow w-[42rem] h-[42rem] top-0 left-1/2 -translate-x-1/2" style="opacity:.55"></div>
+
+  <div class="relative max-w-screen mx-auto px-6 lg:px-10">
+    <div class="reveal glass-deep rounded-[2rem] p-8 sm:p-14 lg:p-20 grad-border overflow-hidden relative">
+      <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full grad-bg opacity-[.13] blur-3xl"></div>
+
+      <div class="relative text-center max-w-4xl mx-auto">
+        <div class="flex items-center justify-center gap-3 mb-8">
+          <span class="eyebrow-line h-px grad-bg"></span>
+          <span class="text-[11px] uppercase tracking-[.3em] text-cyan/80">The Wright Click Guarantee</span>
+          <span class="eyebrow-line h-px grad-bg"></span>
+        </div>
+
+        <h2 class="font-display font-bold tracking-[-.04em] leading-[1.05] text-[clamp(1.9rem,5vw,3.9rem)]">
+          A world-class digital storefront for
+          <span class="grad-flow">under $500.</span>
+        </h2>
+
+        <p class="mt-7 text-white/55 text-lg sm:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+          Hand-coded. Zero clunky builders. Instant loading speeds. The kind of site that makes a
+          national brand wonder who you hired.
+        </p>
+
+        <div class="mt-12 grid sm:grid-cols-3 gap-4 text-left">
+          <div class="glass rounded-2xl p-6">
+            <div class="font-mono text-[11px] text-cyan mb-3">01 / CRAFT</div>
+            <div class="font-display font-semibold text-[15.5px] mb-2">Hand-Coded</div>
+            <p class="text-white/45 text-[13.5px] font-light leading-relaxed">Every element written by a human who understands your business, not dragged from a widget tray.</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <div class="font-mono text-[11px] text-cyan mb-3">02 / STACK</div>
+            <div class="font-display font-semibold text-[15.5px] mb-2">Zero Clunky Builders</div>
+            <p class="text-white/45 text-[13.5px] font-light leading-relaxed">No Wix, no Squarespace tax, no plugin graveyard slowly breaking behind the scenes.</p>
+          </div>
+          <div class="glass rounded-2xl p-6">
+            <div class="font-mono text-[11px] text-cyan mb-3">03 / SPEED</div>
+            <div class="font-display font-semibold text-[15.5px] mb-2">Instant Loading</div>
+            <p class="text-white/45 text-[13.5px] font-light leading-relaxed">Sub-second loads on cellular. Every second of delay is a customer tapping the back button.</p>
+          </div>
+        </div>
+
+        <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#contact" class="btn btn-primary sheen px-8 py-4 text-[15px]">
+            Start My Build
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#work" class="btn btn-ghost px-8 py-4 text-[15px]">See The Before &amp; After</a>
+        </div>
+
+        <p class="mt-7 text-[12.5px] text-white/30">
+          Fixed price, quoted up front. No hourly surprises, no scope games.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROCESS ============================ -->
+<section id="process" class="relative py-28 lg:py-36 border-t border-white/[.06]">
+  <div class="max-w-screen mx-auto px-6 lg:px-10">
+
+    <div class="max-w-2xl mb-16">
+      <div class="reveal flex items-center gap-3 mb-6">
+        <span class="eyebrow-line h-px grad-bg"></span>
+        <span class="text-[11px] uppercase tracking-[.3em] text-cyan/80">How It Works</span>
+      </div>
+      <h2 class="reveal font-display font-bold tracking-[-.035em] leading-[1.04] text-[clamp(2rem,4.6vw,3.5rem)]" style="--d:80ms">
+        Four steps. <span class="grad-text">About two weeks.</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal glass rounded-3xl p-8 grad-border spotlight lift" style="--d:0ms">
+        <div class="font-display text-5xl font-bold text-white/[.09] mb-5">01</div>
+        <h3 class="font-display font-semibold text-lg mb-3">The Free Preview</h3>
+        <p class="text-white/50 text-[14px] font-light leading-relaxed">
+          We design a real section of your new homepage before you pay anything. You see the vision,
+          not a promise.
+        </p>
+      </div>
+      <div class="reveal glass rounded-3xl p-8 grad-border spotlight lift" style="--d:80ms">
+        <div class="font-display text-5xl font-bold text-white/[.09] mb-5">02</div>
+        <h3 class="font-display font-semibold text-lg mb-3">Art Direction</h3>
+        <p class="text-white/50 text-[14px] font-light leading-relaxed">
+          We settle the colors, the lettering, and the feel — the step that turns a plain page into a
+          place that looks like somewhere worth going.
+        </p>
+      </div>
+      <div class="reveal glass rounded-3xl p-8 grad-border spotlight lift" style="--d:160ms">
+        <div class="font-display text-5xl font-bold text-white/[.09] mb-5">03</div>
+        <h3 class="font-display font-semibold text-lg mb-3">The Build</h3>
+        <p class="text-white/50 text-[14px] font-light leading-relaxed">
+          Hand-coded, responsive, accessible, and tuned until every score is where we want it.
+          You review on a live staging link.
+        </p>
+      </div>
+      <div class="reveal glass rounded-3xl p-8 grad-border spotlight lift" style="--d:240ms">
+        <div class="font-display text-5xl font-bold text-white/[.09] mb-5">04</div>
+        <h3 class="font-display font-semibold text-lg mb-3">Launch &amp; Handoff</h3>
+        <p class="text-white/50 text-[14px] font-light leading-relaxed">
+          We ship it, connect your domain, and hand you the keys — files, code, and everything you
+          need to stay in control.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section id="contact" class="relative py-28 lg:py-40 overflow-hidden border-t border-white/[.06]">
+  <div class="aurora a-cyan drift-slower w-[40rem] h-[40rem] -bottom-56 -right-32" style="opacity:.5"></div>
+
+  <div class="relative max-w-screen mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-20 items-start">
+
+      <!-- Left copy -->
+      <div>
+        <div class="reveal flex items-center gap-3 mb-6">
+          <span class="eyebrow-line h-px grad-bg"></span>
+          <span class="text-[11px] uppercase tracking-[.3em] text-cyan/80">Start The Conversation</span>
+        </div>
+        <h2 class="reveal font-display font-bold tracking-[-.04em] leading-[1.03] text-[clamp(2.1rem,5vw,3.8rem)]" style="--d:80ms">
+          Claim your <span class="grad-text">custom design preview.</span>
+        </h2>
+        <p class="reveal mt-6 text-white/50 text-lg font-light leading-relaxed max-w-md" style="--d:150ms">
+          Tell us about your business and we'll design a real piece of your new homepage — free, no
+          obligation, no sales call required. If you love it, we build the rest.
+        </p>
+
+        <div class="reveal mt-10 space-y-4" style="--d:220ms">
+          <div class="flex items-start gap-4">
+            <span class="w-9 h-9 rounded-xl glass grid place-items-center text-cyan shrink-0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <div>
+              <div class="font-medium text-[14.5px]">Reply within one business day</div>
+              <div class="text-white/40 text-[13.5px] font-light">A real person, not an autoresponder sequence.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="w-9 h-9 rounded-xl glass grid place-items-center text-cyan shrink-0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <div>
+              <div class="font-medium text-[14.5px]">Fixed pricing, quoted up front</div>
+              <div class="text-white/40 text-[13.5px] font-light">You'll know the full number before we start.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="w-9 h-9 rounded-xl glass grid place-items-center text-cyan shrink-0">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </span>
+            <div>
+              <div class="font-medium text-[14.5px]">Local businesses only</div>
+              <div class="text-white/40 text-[13.5px] font-light">We take a small number of builds at a time, on purpose.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal" style="--d:120ms">
+        <div class="glass-deep rounded-[1.75rem] p-7 sm:p-10 grad-border relative overflow-hidden">
+          <div class="absolute -top-20 -right-20 w-56 h-56 rounded-full grad-bg opacity-[.12] blur-3xl pointer-events-none"></div>
+
+          <form id="inquiryForm" novalidate class="relative space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Your Name</label>
+                <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your name"
+                       class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
+              </div>
+              <div>
+                <label for="business" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Business Name</label>
+                <input id="business" name="business" type="text" required autocomplete="organization" placeholder="Your business name"
+                       class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="email" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Email</label>
+                <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@yourbusiness.com"
+                       class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
+              </div>
+              <div>
+                <label for="phone" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Phone <span class="normal-case tracking-normal text-white/25">(optional)</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(704) 555-0140"
+                       class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
+              </div>
+            </div>
+
+            <div>
+              <label for="type" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Type Of Business</label>
+              <select id="type" name="type" required class="field w-full px-4 py-3.5 text-[14.5px] text-white appearance-none">
+                <option value="" disabled selected>Select one…</option>
+                <option>Studio / Instruction (music, art, dance)</option>
+                <option>Health, Wellness &amp; Med Spa</option>
+                <option>Trades &amp; Home Services</option>
+                <option>Food, Coffee &amp; Hospitality</option>
+                <option>Professional Services (legal, finance)</option>
+                <option>Retail &amp; Boutique</option>
+                <option>Something else entirely</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">What Should Your Site Do For You?</label>
+              <textarea id="message" name="message" rows="4" required placeholder="I want the phone to ring more, and a site that looks as good as the work we do…"
+                        class="field w-full px-4 py-3.5 text-[14.5px] text-white resize-none"></textarea>
+            </div>
+
+            <div>
+              <label for="current" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Current Website <span class="normal-case tracking-normal text-white/25">(optional)</span></label>
+              <input id="current" name="current" type="text" placeholder="yourbusiness.com — or 'none yet'"
+                     class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
+            </div>
+
+            <button type="submit" id="submitBtn" class="btn btn-primary sheen w-full py-4 text-[15px] mt-2">
+              <span id="btnLabel">Claim My Free Design Preview</span>
+              <svg id="btnIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+
+            <p class="text-center text-[12px] text-white/30 pt-1">
+              No spam, ever. Your details go to one inbox — ours.
+            </p>
+          </form>
+
+          <!-- success state -->
+          <div id="successState" class="hidden relative text-center py-10">
+            <div class="w-16 h-16 rounded-2xl grad-bg grid place-items-center mx-auto mb-6 shadow-[0_18px_50px_-16px_rgba(0,242,254,.8)]">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#04070A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-2xl mb-3">Request received.</h3>
+            <p class="text-white/50 font-light max-w-sm mx-auto">
+              We'll review your business and send your custom design preview within one business day.
+              Keep an eye on your inbox.
+            </p>
+            <button id="resetForm" class="btn btn-ghost mt-8 px-6 py-3 text-[13.5px]">Send another request</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="relative border-t border-white/[.07] py-12">
+  <div class="max-w-screen mx-auto px-6 lg:px-10">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+
+      <a href="#top" class="group flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg grad-bg grid place-items-center transition-transform duration-500 group-hover:scale-110">
+          <span class="font-mono text-[13px] font-bold text-[#04070A]">&gt;_</span>
+        </div>
+        <span class="font-display font-semibold text-[14px] tracking-tight">Wright Click Studios</span>
+      </a>
+
+      <nav class="flex items-center gap-7 text-[13px] text-white/40">
+        <a href="#work" class="hover:text-white transition-colors duration-300">Before &amp; After</a>
+        <a href="#value" class="hover:text-white transition-colors duration-300">The Offer</a>
+        <a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a>
+      </nav>
+
+      <p class="text-[12.5px] text-white/30">© 2026 Wright Click Studios. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer  = window.matchMedia('(pointer: fine)').matches;
+  var canMotion    = finePointer && !reduceMotion;
+
+  /* ---------- Headline: fire the line reveal on load ---------- */
+  var headline = document.querySelector('.hl');
+  if (headline) {
+    requestAnimationFrame(function () {
+      setTimeout(function () { headline.classList.add('lit'); }, 100);
+    });
+  }
+
+  /* ---------- Nav + scroll progress + hero parallax ---------- */
+  var nav = document.getElementById('nav');
+  var progressBar = document.getElementById('progress');
+  var heroInner = document.getElementById('heroInner');
+  var scrollTicking = false;
+
+  var navSolid = false;
+  function onScroll() {
+    var wantSolid = window.scrollY > 24;
+    if (wantSolid !== navSolid) {          // only touch the DOM on an actual change
+      navSolid = wantSolid;
+      nav.classList.toggle('nav-solid', wantSolid);
+    }
+
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+
+    // Hero content drifts up and dissolves as you leave it
+    if (heroInner && !reduceMotion) {
+      var y = window.scrollY;
+      var vh = window.innerHeight;
+      if (y < vh) {
+        // Hold full opacity through the first quarter, then dissolve as the hero exits
+        var faded = Math.max(0, y - vh * 0.25) / (vh * 0.7);
+        heroInner.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0)';
+        heroInner.style.opacity = String(Math.max(0, 1 - faded));
+      }
+    }
+    scrollTicking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+
+  /* ---------- Cursor orb + layered parallax ---------- */
+  var orb = document.getElementById('orb');
+  var layers = Array.prototype.slice.call(document.querySelectorAll('.plx'));
+  var pointerX = 0, pointerY = 0, easedX = 0, easedY = 0, parallaxRaf = null;
+
+  function stepParallax() {
+    parallaxRaf = null;
+    easedX += (pointerX - easedX) * 0.09;
+    easedY += (pointerY - easedY) * 0.09;
+
+    layers.forEach(function (layer) {
+      var depth = parseFloat(layer.dataset.depth) || 0;
+      layer.style.transform =
+        'translate3d(' + (easedX * depth).toFixed(2) + 'px,' + (easedY * depth).toFixed(2) + 'px,0)';
+    });
+
+    if (Math.abs(pointerX - easedX) > 0.0008 || Math.abs(pointerY - easedY) > 0.0008) {
+      parallaxRaf = requestAnimationFrame(stepParallax);
+    }
+  }
+
+  if (canMotion) {
+    window.addEventListener('pointermove', function (e) {
+      pointerX = (e.clientX / window.innerWidth) - 0.5;
+      pointerY = (e.clientY / window.innerHeight) - 0.5;
+
+      orb.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0)';
+      orb.style.opacity = '1';
+
+      if (!parallaxRaf) parallaxRaf = requestAnimationFrame(stepParallax);
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', function () { orb.style.opacity = '0'; });
+  }
+
+  /* ---------- Magnetic buttons ---------- */
+  if (canMotion) {
+    Array.prototype.forEach.call(document.querySelectorAll('.magnetic'), function (btn) {
+      btn.addEventListener('pointermove', function (e) {
+        var r = btn.getBoundingClientRect();
+        var dx = e.clientX - r.left - r.width / 2;
+        var dy = e.clientY - r.top - r.height / 2;
+        btn.style.setProperty('--tx', (dx * 0.2).toFixed(1) + 'px');
+        btn.style.setProperty('--ty', (dy * 0.36).toFixed(1) + 'px');
+      });
+      btn.addEventListener('pointerleave', function () {
+        btn.style.setProperty('--tx', '0px');
+        btn.style.setProperty('--ty', '0px');
+      });
+    });
+  }
+
+  /* ---------- Idle ambient animations when their section is off screen ----------
+     CSS animations keep compositing even when scrolled out of view, so the
+     aurora blobs and scan beam were burning frames the whole way down. */
+  (function pauseOffscreenAmbient() {
+    if (reduceMotion) return;
+    var ambient = document.querySelectorAll('.aurora, .scanline, .ring-spin, .marquee-track');
+    if (!('IntersectionObserver' in window)) return;
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      });
+    }, { rootMargin: '120px' });
+
+    Array.prototype.forEach.call(ambient, function (el) { io.observe(el); });
+  })();
+
+  /* ---------- Hero particle constellation ---------- */
+  (function particleField() {
+    var canvas = document.getElementById('particles');
+    if (!canvas || reduceMotion) return;
+
+    var ctx = canvas.getContext('2d', { alpha: true });
+    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    var TINTS = ['0,242,254', '79,172,254', '123,92,255'];
+    var pts = [], W = 0, H = 0;
+    var boxLeft = 0, boxDocTop = 0;          // cached geometry, never read during scroll
+    var localX = -9999, localY = -9999;
+    var visible = true, raf = null;
+
+    function build() {
+      var rect = canvas.getBoundingClientRect();
+      boxLeft = rect.left;
+      boxDocTop = rect.top + window.scrollY;
+      W = rect.width; H = rect.height;
+      if (!W || !H) return;
+
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      var count = Math.min(88, Math.max(24, Math.round(W / 18)));
+      pts = [];
+      for (var i = 0; i < count; i++) {
+        pts.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.2,
+          vy: (Math.random() - 0.5) * 0.2,
+          r: Math.random() * 1.5 + 0.6,
+          t: TINTS[i % TINTS.length]
+        });
+      }
+    }
+
+    var LINK2 = 21000;   // squared link radius
+    var LINK  = 145;     // its square root, for cheap axis rejection
+    var CURSOR2 = 34000;
+
+    // Links are bucketed by opacity so the whole field costs a handful of
+    // stroke() calls per frame instead of one per line.
+    var BUCKETS = 5;
+    var buckets = [];
+
+    function draw() {
+      raf = null;
+      ctx.clearRect(0, 0, W, H);
+
+      for (var b = 0; b < BUCKETS; b++) buckets[b] = null;
+
+      var i, j, p, q;
+
+      for (i = 0; i < pts.length; i++) {
+        p = pts[i];
+        p.x += p.vx; p.y += p.vy;
+
+        if (p.x < -20) p.x = W + 20; else if (p.x > W + 20) p.x = -20;
+        if (p.y < -20) p.y = H + 20; else if (p.y > H + 20) p.y = -20;
+      }
+
+      for (i = 0; i < pts.length; i++) {
+        p = pts[i];
+
+        for (j = i + 1; j < pts.length; j++) {
+          q = pts[j];
+          var dx = p.x - q.x;
+          if (dx > LINK || dx < -LINK) continue;      // reject on one axis first
+          var dy = p.y - q.y;
+          if (dy > LINK || dy < -LINK) continue;
+
+          var d2 = dx * dx + dy * dy;
+          if (d2 >= LINK2) continue;
+
+          var slot = (1 - d2 / LINK2) * BUCKETS | 0;
+          if (slot >= BUCKETS) slot = BUCKETS - 1;
+          if (!buckets[slot]) buckets[slot] = new Path2D();
+          buckets[slot].moveTo(p.x, p.y);
+          buckets[slot].lineTo(q.x, q.y);
+        }
+      }
+
+      ctx.lineWidth = 1;
+      for (i = 0; i < BUCKETS; i++) {
+        if (!buckets[i]) continue;
+        ctx.strokeStyle = 'rgba(120,190,254,' + (0.035 + i * 0.035).toFixed(3) + ')';
+        ctx.stroke(buckets[i]);
+      }
+
+      // Cursor web + nodes
+      var cursorPath = null;
+      for (i = 0; i < pts.length; i++) {
+        p = pts[i];
+        var mdx = p.x - localX, mdy = p.y - localY;
+        var md2 = mdx * mdx + mdy * mdy;
+        var near = md2 < CURSOR2;
+
+        if (near) {
+          if (!cursorPath) cursorPath = new Path2D();
+          cursorPath.moveTo(p.x, p.y);
+          cursorPath.lineTo(localX, localY);
+        }
+
+        ctx.fillStyle = 'rgba(' + p.t + ',' + (near ? 0.95 : 0.5) + ')';
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, near ? p.r * 1.7 : p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (cursorPath) {
+        ctx.strokeStyle = 'rgba(0,242,254,.3)';
+        ctx.stroke(cursorPath);
+      }
+
+      if (visible) raf = requestAnimationFrame(draw);
+    }
+
+    function start() { if (!raf && visible) raf = requestAnimationFrame(draw); }
+    function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+
+    build();
+    start();
+
+    window.addEventListener('resize', function () { build(); }, { passive: true });
+
+    if (finePointer) {
+      // Derived from cached geometry + scrollY, so no layout is read while scrolling
+      window.addEventListener('pointermove', function (e) {
+        localX = e.clientX - boxLeft;
+        localY = e.clientY + window.scrollY - boxDocTop;
+      }, { passive: true });
+    }
+
+    // Stop drawing when the hero scrolls away or the tab is hidden
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      visible ? start() : stop();
+    }, { threshold: 0 }).observe(canvas);
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) { stop(); } else { visible = true; start(); }
+    });
+  })();
+
+  /* ---------- Mobile menu ---------- */
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuIcon = document.getElementById('menuIcon');
+  var OPEN_ICON = '<path d="M4 7h16M4 12h16M4 17h16"/>';
+  var CLOSE_ICON = '<path d="M6 6l12 12M18 6L6 18"/>';
+
+  function setMenu(open) {
+    mobileMenu.classList.toggle('hidden', !open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuIcon.innerHTML = open ? CLOSE_ICON : OPEN_ICON;
+  }
+  menuBtn.addEventListener('click', function () {
+    setMenu(mobileMenu.classList.contains('hidden'));
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.mob-link'), function (a) {
+    a.addEventListener('click', function () { setMenu(false); });
+  });
+
+  /* ---------- Reveal on scroll ---------- */
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.reveal'), function (el) {
+    revealObserver.observe(el);
+  });
+
+  /* ---------- Counters ---------- */
+  function animateCount(el) {
+    var target = parseFloat(el.dataset.count);
+    var duration = 1500;
+    var start = performance.now();
+    function frame(now) {
+      var p = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = String(Math.round(target * eased));
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  var counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  Array.prototype.forEach.call(document.querySelectorAll('.counter'), function (el) {
+    counterObserver.observe(el);
+  });
+
+  /* ---------- Metric dials ---------- */
+  var CIRC = 2 * Math.PI * 52;
+  var dialObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var pct = parseFloat(entry.target.dataset.pct) / 100;
+      entry.target.style.strokeDashoffset = String(CIRC * (1 - pct));
+      dialObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.5 });
+  Array.prototype.forEach.call(document.querySelectorAll('.dial circle.value'), function (c) {
+    c.setAttribute('stroke-dasharray', CIRC.toFixed(1));
+    c.style.strokeDashoffset = CIRC.toFixed(1);
+    dialObserver.observe(c);
+  });
+
+  /* ---------- Case study tabs ---------- */
+  var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
+  var indicator = document.getElementById('tabIndicator');
+
+  function moveIndicator(btn) {
+    indicator.style.width = btn.offsetWidth + 'px';
+    indicator.style.transform = 'translateX(' + btn.offsetLeft + 'px)';
+  }
+
+  function selectTab(name) {
+    tabButtons.forEach(function (btn) {
+      var active = btn.dataset.tab === name;
+      btn.setAttribute('aria-selected', String(active));
+      btn.classList.toggle('text-[#04070A]', active);
+      btn.classList.toggle('text-white/55', !active);
+      if (active) moveIndicator(btn);
+    });
+    document.getElementById('panel-before').classList.toggle('active', name === 'before');
+    document.getElementById('panel-after').classList.toggle('active', name === 'after');
+  }
+
+  tabButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () { selectTab(btn.dataset.tab); });
+    btn.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        var next = btn.dataset.tab === 'before' ? 'after' : 'before';
+        selectTab(next);
+        document.getElementById('tab-' + next).focus();
+      }
+    });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-goto]'), function (btn) {
+    btn.addEventListener('click', function () {
+      selectTab(btn.dataset.goto);
+      document.getElementById('work').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Initial + responsive indicator placement
+  function syncIndicator() {
+    var active = document.querySelector('.tab-btn[aria-selected="true"]');
+    if (active) moveIndicator(active);
+  }
+  window.addEventListener('resize', syncIndicator);
+  window.addEventListener('load', syncIndicator);
+  syncIndicator();
+  // Fonts can shift button widths after load
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncIndicator);
+
+  /* ---------- Cursor spotlight on cards ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.spotlight'), function (card) {
+    card.addEventListener('pointermove', function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* ---------- Inquiry form ---------- */
+  var form = document.getElementById('inquiryForm');
+  var successState = document.getElementById('successState');
+  var submitBtn = document.getElementById('submitBtn');
+  var btnLabel = document.getElementById('btnLabel');
+
+  function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var required = ['name', 'business', 'email', 'type', 'message'];
+    var firstBad = null;
+
+    required.forEach(function (id) {
+      var el = document.getElementById(id);
+      var bad = !el.value.trim() || (id === 'email' && !isValidEmail(el.value.trim()));
+      el.classList.toggle('err', bad);
+      if (bad && !firstBad) firstBad = el;
+    });
+
+    if (firstBad) { firstBad.focus(); return; }
+
+    // Sending state
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '.72';
+    btnLabel.textContent = 'Sending…';
+
+    // No backend wired yet — swap this timeout for your fetch()/Formspree POST.
+    setTimeout(function () {
+      form.classList.add('hidden');
+      successState.classList.remove('hidden');
+    }, 900);
+  });
+
+  // Clear error styling as the user types
+  Array.prototype.forEach.call(form.querySelectorAll('.field'), function (el) {
+    el.addEventListener('input', function () { el.classList.remove('err'); });
+    el.addEventListener('change', function () { el.classList.remove('err'); });
+  });
+
+  document.getElementById('resetForm').addEventListener('click', function () {
+    form.reset();
+    form.classList.remove('hidden');
+    successState.classList.add('hidden');
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = '';
+    btnLabel.textContent = 'Claim My Free Design Preview';
+  });
+})();
+</script>
+</body>
+</html>
