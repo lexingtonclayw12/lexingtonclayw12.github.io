@@ -1,0 +1,10 @@
+# wrightclickstudio.com
+User-agent: *
+Allow: /
+
+# Nothing here is private, but there is no reason to spend crawl budget on
+# the build script or the archived copy of the previous site.
+Disallow: /_archive/
+Disallow: /build_pages.py
+
+Sitemap: https://wrightclickstudio.com/sitemap.xml

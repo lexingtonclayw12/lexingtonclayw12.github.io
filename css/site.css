@@ -1,0 +1,312 @@
+/* ============================================================================
+   site.css — loaded AFTER base.css.
+   Three jobs: fix the contrast ramp, add the conversion furniture (sticky call
+   bar, NAP, quick-capture form), and provide the components the interior pages
+   need. Nothing here depends on a build step.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   1. CONTRAST RAMP
+   The original palette ran white at .25–.40 alpha for every small label, which
+   measures 2.1:1–3.8:1 on #0A0A0A — below the 4.5:1 AA floor and effectively
+   invisible on a phone outdoors. Minimum passing alpha on this background is
+   .45, so the whole ramp is remapped [.25,.80] -> [.50,.92]. It's a linear
+   shift, so the relative hierarchy between steps survives; everything just
+   clears AA. Do not reintroduce a value below .50 for text.
+   ------------------------------------------------------------------------- */
+.text-white\/25{color:rgba(255,255,255,.500)}  /* was 2.14:1 -> 5.4:1 */
+.text-white\/30{color:rgba(255,255,255,.538)}  /* was 2.59:1 -> 6.1:1 */
+.text-white\/35{color:rgba(255,255,255,.576)}  /* was 3.14:1 -> 6.8:1 */
+.text-white\/40{color:rgba(255,255,255,.615)}  /* was 3.77:1 -> 7.6:1 */
+.text-white\/45{color:rgba(255,255,255,.653)}
+.text-white\/50{color:rgba(255,255,255,.691)}
+.text-white\/55{color:rgba(255,255,255,.729)}
+.text-white\/60{color:rgba(255,255,255,.767)}
+.text-white\/65{color:rgba(255,255,255,.805)}
+.text-white\/70{color:rgba(255,255,255,.844)}
+.text-white\/80{color:rgba(255,255,255,.920)}
+.text-cyan\/50{color:rgba(0,242,254,.78)}
+.text-cyan\/70{color:rgba(0,242,254,.88)}
+
+/* Micro-labels were set as small as 9.5px. Below 11px, wide letterspacing
+   stops being legible at arm's length — clamp the floor. */
+.text-\[9\.5px\],.text-\[10px\],.text-\[10\.5px\]{font-size:11px}
+.text-\[11px\],.text-\[11\.5px\]{font-size:11.5px}
+
+/* The keyword-bearing second half of the H1. Deliberately a different weight
+   and size to the display lines above it — it needs to read as a subtitle, not
+   as a fifth headline line, while still living inside the <h1> so the phrase
+   "website design in Fort Mill" is actually in the page's main heading. */
+.h1-sub{
+  display:block;margin-top:1.6rem;
+  font-family:'Inter',system-ui,sans-serif;font-weight:300;
+  letter-spacing:-.005em;line-height:1.4;
+  font-size:clamp(1rem,1.9vw,1.4rem);
+  color:rgba(255,255,255,.729);
+  max-width:34ch;
+}
+
+/* Three utility classes the markup uses that the precompiled Tailwind bundle
+   doesn't contain. There is no build step here, so a class that was never
+   compiled is simply dead — `px-7` silently rendered a button with no
+   horizontal padding. `mt-.5` is a typo carried over from the original build
+   (Tailwind's class is `mt-0.5`); defining it is safer than editing markup
+   that may be relying on the zero-effect. If you add more utilities, either
+   pick one that already exists or define it here. */
+.px-7{padding-left:1.75rem;padding-right:1.75rem}
+.\!mt-0{margin-top:0 !important}
+.mt-\.5{margin-top:.125rem}
+
+/* ---------------------------------------------------------------------------
+   2. FOCUS + SKIP LINK
+   Keyboard users had no visible focus ring anywhere on the page.
+   ------------------------------------------------------------------------- */
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--cyan);color:#04070A;font-weight:600;
+  padding:.75rem 1.25rem;border-radius:0 0 .5rem 0;
+}
+.skip-link:focus{left:0}
+
+/* ---------------------------------------------------------------------------
+   3. STICKY MOBILE CALL BAR
+   The single largest conversion leak in the previous build: below 1024px the
+   header CTA and the phone number both collapsed into the hamburger, so a
+   visitor on a phone had no way to act without hunting. This pins both to the
+   bottom of the viewport. Hidden on desktop, where the header CTA is visible.
+   ------------------------------------------------------------------------- */
+.callbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:rgba(255,255,255,.10);
+  border-top:1px solid rgba(255,255,255,.10);
+  padding-bottom:env(safe-area-inset-bottom);
+  transform:translateY(110%);
+  transition:transform .32s cubic-bezier(.22,1,.36,1);
+}
+.callbar.up{transform:translateY(0)}
+.callbar a{
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:56px;font-family:'Space Grotesk',system-ui,sans-serif;
+  font-weight:600;font-size:15px;letter-spacing:-.01em;
+}
+.callbar .cb-call{background:#141416;color:#fff}
+.callbar .cb-cta{background:var(--grad);color:#04070A}
+.callbar svg{width:17px;height:17px;flex:none}
+@media (min-width:1024px){.callbar{display:none}}
+/* Keep the bar from covering the last of the page or a focused field */
+@media (max-width:1023px){
+  body.has-callbar{padding-bottom:56px}
+}
+
+/* ---------------------------------------------------------------------------
+   4. NAP — name / address / phone
+   The strongest local-pack signal there is, and it was absent. Must stay byte
+   identical to the Google Business Profile listing.
+   ------------------------------------------------------------------------- */
+.nap{
+  display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;align-items:baseline;
+  font-size:14px;line-height:1.6;color:rgba(255,255,255,.729);
+}
+.nap strong{color:#fff;font-weight:600}
+.nap a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+.nap a:hover{color:#fff}
+.nap-hours{font-size:13px;color:rgba(255,255,255,.615)}
+
+/* ---------------------------------------------------------------------------
+   5. INTERIOR PAGE FURNITURE
+   ------------------------------------------------------------------------- */
+.crumbs{
+  font-size:12.5px;letter-spacing:.02em;color:rgba(255,255,255,.615);
+  display:flex;flex-wrap:wrap;gap:.45rem;align-items:center;
+}
+.crumbs a{color:rgba(255,255,255,.729);text-decoration:underline;text-underline-offset:3px}
+.crumbs a:hover{color:var(--cyan)}
+.crumbs span[aria-current]{color:#fff}
+
+.phero{position:relative;padding:9.5rem 0 4.5rem;overflow:hidden}
+@media (min-width:1024px){.phero{padding:11rem 0 6rem}}
+.phero h1{
+  font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;
+  letter-spacing:-.04em;line-height:1.03;
+  font-size:clamp(2.2rem,5.4vw,4.2rem);margin-top:1.4rem;
+}
+.phero .lede{
+  margin-top:1.6rem;max-width:44rem;font-weight:300;
+  font-size:clamp(1.02rem,1.4vw,1.24rem);line-height:1.65;
+  color:rgba(255,255,255,.729);
+}
+
+.sec{position:relative;padding:5rem 0}
+@media (min-width:1024px){.sec{padding:7rem 0}}
+.sec--line{border-top:1px solid rgba(255,255,255,.07)}
+.sec h2{
+  font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;
+  letter-spacing:-.035em;line-height:1.06;
+  font-size:clamp(1.85rem,4.2vw,3.1rem);
+}
+.sec h3{
+  font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;
+  letter-spacing:-.02em;font-size:1.16rem;
+}
+.eyebrow{
+  font-size:11.5px;text-transform:uppercase;letter-spacing:.24em;
+  color:rgba(255,255,255,.615);font-weight:500;margin-bottom:1.1rem;
+}
+.eyebrow em{color:var(--cyan);font-style:normal}
+
+.prose p{
+  font-size:16.5px;line-height:1.72;color:rgba(255,255,255,.729);
+  font-weight:300;max-width:42rem;
+}
+.prose p + p{margin-top:1.15rem}
+.prose strong{color:#fff;font-weight:600}
+.prose a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+
+/* Checklist — used on the church and area pages */
+.ticks{margin-top:2rem;display:grid;gap:.95rem}
+.ticks li{
+  position:relative;padding-left:2rem;font-size:15.5px;line-height:1.6;
+  color:rgba(255,255,255,.767);font-weight:300;
+}
+.ticks li strong{color:#fff;font-weight:600}
+.ticks li::before{
+  content:"";position:absolute;left:0;top:.42em;width:1.05rem;height:1.05rem;
+  border-radius:99px;background:var(--grad);
+  -webkit-mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4.5 12.5 5 5 10-11'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4.5 12.5 5 5 10-11'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+/* Generic card grid for the interior pages */
+.cards{display:grid;gap:1.25rem;margin-top:3rem}
+@media (min-width:640px){.cards--2{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:900px){.cards--3{grid-template-columns:repeat(3,1fr)}}
+.pcard{
+  position:relative;border-radius:1.15rem;padding:1.85rem;
+  background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.075);
+  transition:border-color .4s ease,background .4s ease,transform .4s ease;
+}
+.pcard:hover{border-color:rgba(0,242,254,.3);background:rgba(255,255,255,.055);transform:translateY(-3px)}
+.pcard p{margin-top:.8rem;font-size:14.8px;line-height:1.68;color:rgba(255,255,255,.729);font-weight:300}
+.pcard .ico{
+  width:2.4rem;height:2.4rem;border-radius:.7rem;display:grid;place-items:center;
+  background:rgba(0,242,254,.1);border:1px solid rgba(0,242,254,.22);margin-bottom:1.15rem;
+}
+.pcard .ico svg{width:1.15rem;height:1.15rem;stroke:var(--cyan);fill:none;stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+
+/* Service-area link grid */
+.areas{display:grid;gap:.85rem;margin-top:2.5rem}
+@media (min-width:640px){.areas{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:960px){.areas{grid-template-columns:repeat(3,1fr)}}
+.area{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.1rem 1.35rem;border-radius:.9rem;
+  background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.075);
+  font-size:15px;transition:border-color .35s ease,background .35s ease;
+}
+.area:hover{border-color:rgba(0,242,254,.35);background:rgba(255,255,255,.06)}
+.area b{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;color:#fff}
+.area span{font-size:12.5px;color:rgba(255,255,255,.615)}
+.area svg{width:15px;height:15px;stroke:var(--cyan);flex:none}
+
+/* FAQ — marked up as FAQPage schema on every page that uses it, because the
+   rich result is free SERP real estate for long-tail local queries. */
+.faq{margin-top:2.5rem;border-top:1px solid rgba(255,255,255,.09)}
+.qa{border-bottom:1px solid rgba(255,255,255,.09)}
+.qa summary{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;
+  padding:1.35rem 0;cursor:pointer;list-style:none;
+  font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;
+  font-size:16.5px;line-height:1.45;color:#fff;
+}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{
+  content:"";flex:none;width:1.1rem;height:1.1rem;margin-top:.2rem;
+  background:currentColor;color:rgba(255,255,255,.615);
+  -webkit-mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E") center/contain no-repeat;
+  transition:transform .3s ease;
+}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa summary:hover{color:var(--cyan)}
+.qa .ans{padding:0 0 1.5rem;max-width:44rem}
+.qa .ans p{font-size:15.5px;line-height:1.7;color:rgba(255,255,255,.729);font-weight:300}
+.qa .ans p + p{margin-top:.9rem}
+
+/* Pull-quote / honest disclosure block. Used where the page makes a claim
+   about work done rather than showing a named client. */
+.note{
+  margin-top:2.5rem;padding:1.5rem 1.75rem;border-radius:1rem;
+  border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);
+  border-left:2px solid var(--cyan);
+}
+.note p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.767);font-weight:300}
+.note .who{
+  margin-top:.9rem;font-size:12px;text-transform:uppercase;letter-spacing:.18em;
+  color:rgba(255,255,255,.615);
+}
+
+/* ---------------------------------------------------------------------------
+   6. QUICK-CAPTURE FORM
+   Previous version asked for 5 required fields including a free-text essay,
+   in exchange for a free preview. This asks for three easy ones and hides the
+   rest behind a disclosure, so a lead can be sent in about fifteen seconds.
+   ------------------------------------------------------------------------- */
+.disclosure{margin-top:.35rem}
+.disclosure > summary{
+  display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;list-style:none;
+  font-size:13.5px;color:var(--cyan);padding:.5rem 0;
+}
+.disclosure > summary::-webkit-details-marker{display:none}
+.disclosure > summary::before{
+  content:"+";font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;
+  display:grid;place-items:center;width:1.15rem;height:1.15rem;border-radius:99px;
+  border:1px solid rgba(0,242,254,.45);font-size:12px;line-height:1;
+}
+.disclosure[open] > summary::before{content:"–"}
+.disclosure > summary:hover{color:#fff}
+.disclosure .more{display:grid;gap:1.25rem;padding-top:1.25rem}
+
+.hint{font-size:12.5px;color:rgba(255,255,255,.615);margin-top:.4rem}
+.field-err{
+  display:none;font-size:12.5px;color:#FF8A8A;margin-top:.4rem;
+}
+.field-err.show{display:block}
+
+/* ---------------------------------------------------------------------------
+   6b. TOUCH TARGETS
+   The footer nav and the breadcrumb were 19–20px tall links — fine with a
+   mouse, a coin-toss with a thumb. Padding brings them to ~44px on touch
+   without changing the type size or the desktop layout.
+   ------------------------------------------------------------------------- */
+@media (hover:none), (max-width:1023px){
+  .footer-nav a,
+  footer nav a{ padding:.95rem 0; line-height:1.2; }
+  .crumbs a, .crumbs span[aria-current]{ padding:.8rem 0; }
+  .nap a{ display:inline-block; padding:.75rem 0; }
+}
+
+/* ---------------------------------------------------------------------------
+   7. MOTION
+   The base sheet honours prefers-reduced-motion for its own animations; these
+   are the ones added here.
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion:reduce){
+  .callbar{transition:none}
+  .pcard,.area{transition:none}
+  .pcard:hover{transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------------------------------------------------------------------------
+   8. PRINT — a surprising number of small-business owners print a quote page
+   to take to a partner or a board.
+   ------------------------------------------------------------------------- */
+@media print{
+  .callbar,#nav,#orb,#progress,.aurora,.scanline,canvas,.marquee{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .prose p,.ticks li,.qa .ans p{color:#222!important}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:11px;color:#555}
+}

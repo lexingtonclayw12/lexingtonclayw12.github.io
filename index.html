@@ -3,481 +3,143 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Wright Click Studios — Elite Websites for Local Businesses</title>
-<meta name="description" content="Wright Click Studios builds beautiful, fast websites for local businesses. A website you'd be proud of, for under $500." />
+
+<title>Website Design Fort Mill &amp; Rock Hill SC | Wright Click</title>
+<meta name="description" content="Hand-built websites for local businesses and churches in Fort Mill, Rock Hill and Charlotte. $500 flat, with a free design preview before you pay." />
+<link rel="canonical" href="https://wrightclickstudio.com/" />
 <meta name="theme-color" content="#0A0A0A" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="geo.region" content="US-SC" />
+<meta name="geo.placename" content="Fort Mill, South Carolina" />
 
 <!-- Carried over from the previous page at this domain. Removing it breaks TikTok domain verification. -->
 <meta name="tiktok-developers-site-verification" content="P2GTsfRB4DUnDLSib3ySKTYpfyuixVwl" />
+<!-- TODO(owner): paste the Google Search Console verification tag here. See README. -->
 
-<meta property="og:title" content="Wright Click Studios — Elite Websites for Local Businesses" />
-<meta property="og:description" content="We give local businesses the website they actually deserve. Built by hand, opens instantly, under $500." />
+<meta property="og:title" content="Website Design Fort Mill &amp; Rock Hill SC | Wright Click" />
+<meta property="og:description" content="Hand-built websites for local businesses and churches across the Charlotte metro. $500 flat, free evaluation, real design preview before you pay." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://wrightclickstudio.com/" />
+<meta property="og:image" content="https://wrightclickstudio.com/images/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Wright Click Studios" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Website Design in Fort Mill &amp; Rock Hill SC" />
+<meta name="twitter:description" content="Hand-built websites for local businesses and churches across the Charlotte metro. $500 flat." />
+<meta name="twitter:image" content="https://wrightclickstudio.com/images/og-cover.jpg" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
-<!-- Tailwind is pre-compiled into the <style> block below. No CDN, no in-browser build. -->
+<link rel="preload" href="/fonts/spacegrotesk-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/site.css" />
 
-<style>
-  :root{
-    --cyan:#00F2FE;
-    --azure:#4FACFE;
-    --violet:#7B5CFF;
-    --grad: linear-gradient(102deg, #00F2FE 0%, #4FACFE 52%, #7B5CFF 100%);
+<!-- Google Analytics 4. Replace G-XXXXXXXXXX with the real measurement ID and
+     this whole block goes live; until then it is inert. site.js pushes
+     lead_form and lead_call events into dataLayer either way. See README. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var GA4_ID = 'G-XXXXXXXXXX';
+  if (GA4_ID.indexOf('XXXX') === -1) {
+    var s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', GA4_ID);
   }
+</script>
 
-  html { scroll-padding-top: 96px; }
-  body {
-    background:#0A0A0A;
-    color:#FFFFFF;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  ::selection { background: rgba(0,242,254,.28); color:#fff; }
-
-  /* ---------- Scrollbar ---------- */
-  ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background:#0A0A0A; }
-  ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg,#00F2FE,#7B5CFF);
-    border-radius: 99px;
-    border: 3px solid #0A0A0A;
-  }
-
-  /* ---------- Text + border gradients ---------- */
-  .grad-text{
-    background: var(--grad);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-  .grad-bg{ background: var(--grad); }
-
-  /* Gradient hairline border via mask */
-  .grad-border{ position: relative; }
-  .grad-border::before{
-    content:"";
-    position:absolute; inset:0;
-    border-radius: inherit;
-    padding:1px;
-    background: linear-gradient(140deg, rgba(0,242,254,.55), rgba(123,92,255,.35) 45%, rgba(255,255,255,.06) 75%);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-            mask-composite: exclude;
-    pointer-events:none;
-    opacity:.75;
-    transition: opacity .45s ease;
-  }
-  .grad-border:hover::before{ opacity:1; }
-
-  /* ---------- Glass ---------- */
-  /* No backdrop-filter here on purpose. A dozen blurred surfaces on screen at
-     once was the main source of scroll jank, and over a near-black page the
-     blur is invisible anyway — a translucent gradient reads identically.
-     backdrop-filter is reserved for the fixed nav, which really does sit over
-     moving content. */
-  .glass{
-    background: linear-gradient(160deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
-    border: 1px solid rgba(255,255,255,.09);
-  }
-  .glass-deep{
-    background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(16,16,20,.72));
-    border: 1px solid rgba(255,255,255,.08);
-    box-shadow: 0 40px 90px -50px rgba(0,242,254,.35), inset 0 1px 0 rgba(255,255,255,.07);
-  }
-
-  /* ---------- Ambient light ---------- */
-  /* No filter: blur() at all. Blurring a 700px element is the single most
-     expensive thing on the page — its cost scales with both radius and area,
-     and it was what made scrolling stutter. A multi-stop radial gradient
-     produces the same soft falloff and composites for free. */
-  .aurora{
-    position:absolute;
-    border-radius:50%;
-    filter: blur(22px);   /* small radius only — the gradient does the real work */
-    pointer-events:none;
-    will-change: transform;
-  }
-  /* Falloff is deliberately tight. Fill rate — the number of alpha-blended
-     pixels — is what costs frames here, so the colour is concentrated in a
-     bright core and reaches zero early rather than washing the viewport. */
-  .a-cyan{
-    background: radial-gradient(circle closest-side,
-      rgba(0,242,254,.72), rgba(0,242,254,.38) 24%, rgba(0,242,254,.13) 44%,
-      rgba(0,242,254,.03) 58%, rgba(0,242,254,0) 68%);
-  }
-  .a-violet{
-    background: radial-gradient(circle closest-side,
-      rgba(123,92,255,.75), rgba(123,92,255,.40) 24%, rgba(123,92,255,.14) 44%,
-      rgba(123,92,255,.03) 58%, rgba(123,92,255,0) 68%);
-  }
-  .a-azure{
-    background: radial-gradient(circle closest-side,
-      rgba(79,172,254,.70), rgba(79,172,254,.36) 24%, rgba(79,172,254,.12) 44%,
-      rgba(79,172,254,.03) 58%, rgba(79,172,254,0) 68%);
-  }
-  @keyframes drift {
-    0%,100% { transform: translate3d(0,0,0) scale(1); }
-    33%     { transform: translate3d(4%, -6%, 0) scale(1.09); }
-    66%     { transform: translate3d(-5%, 4%, 0) scale(.96); }
-  }
-  .drift-slow { animation: drift 22s ease-in-out infinite; }
-  .drift-slower { animation: drift 30s ease-in-out infinite reverse; }
-
-  /* Fine technical grid */
-  .grid-lines{
-    background-image:
-      linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
-    background-size: 72px 72px;
-    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 20%, transparent 78%);
-            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 20%, transparent 78%);
-  }
-
-  /* Film grain — plain fixed layer. No mix-blend-mode and no oversized box:
-     both forced a full-viewport recomposite on every scroll frame. */
-  .grain::after{
-    content:"";
-    position:fixed; inset:0;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
-    opacity:.05;
-    pointer-events:none;
-    z-index:60;
-  }
-
-  /* ---------- Buttons ---------- */
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
-    border-radius: 999px;
-    font-weight:600;
-    letter-spacing:-.01em;
-    /* --tx/--ty drive the magnetic pull, --s the hover scale, so JS and CSS never fight */
-    transform: translate3d(var(--tx,0px), var(--ty,0px), 0) scale(var(--s,1));
-    transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, background-color .35s ease, color .35s ease, border-color .35s ease, filter .35s ease;
-    will-change: transform;
-  }
-  .btn:hover{ --s:1.055; }
-  .btn:active{ --s:.975; }
-  .magnetic{ transition: transform .18s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, filter .35s ease; }
-  .magnetic:not(:hover){ transition-duration: .55s; }
-  .btn:focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; }
-
-  .btn-primary{
-    background: var(--grad);
-    color:#04070A;
-    box-shadow: 0 10px 34px -12px rgba(0,242,254,.6);
-  }
-  .btn-primary:hover{ box-shadow: 0 20px 55px -14px rgba(0,242,254,.78); filter: brightness(1.07); }
-
-  .btn-ghost{
-    border:1px solid rgba(255,255,255,.16);
-    color:#fff;
-    background: rgba(255,255,255,.02);
-  }
-  .btn-ghost:hover{ border-color: rgba(0,242,254,.55); background: rgba(0,242,254,.07); }
-
-  /* Shimmer sweep on primary buttons */
-  .sheen{ position:relative; overflow:hidden; }
-  .sheen::after{
-    content:"";
-    position:absolute; top:0; left:-130%;
-    width:60%; height:100%;
-    background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
-    transform: skewX(-18deg);
-    transition: left .75s cubic-bezier(.16,1,.3,1);
-  }
-  .sheen:hover::after{ left:130%; }
-
-  /* ---------- Reveal on scroll ---------- */
-  .reveal{
-    opacity:0;
-    transform: translateY(26px);
-    transition: opacity .95s cubic-bezier(.16,1,.3,1), transform .95s cubic-bezier(.16,1,.3,1);
-    transition-delay: var(--d, 0ms);
-  }
-  .reveal.in{ opacity:1; transform:none; }
-
-  /* ---------- Marquee ---------- */
-  @keyframes scrollx { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
-  .marquee-track{ animation: scrollx 38s linear infinite; }
-  .marquee:hover .marquee-track{ animation-play-state: paused; }
-  .fade-x{
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-            mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-  }
-
-  /* ---------- Card spotlight follows cursor ---------- */
-  .spotlight{ position:relative; overflow:hidden; }
-  .spotlight::after{
-    content:"";
-    position:absolute; inset:0;
-    background: radial-gradient(420px circle at var(--mx,50%) var(--my,0%), rgba(0,242,254,.13), transparent 62%);
-    opacity:0; transition: opacity .5s ease;
-    pointer-events:none;
-  }
-  .spotlight:hover::after{ opacity:1; }
-
-  /* ---------- Case study panels ---------- */
-  .panel{ display:none; }
-  .panel.active{ display:block; animation: panelIn .65s cubic-bezier(.16,1,.3,1) both; }
-  @keyframes panelIn{
-    from{ opacity:0; transform: translateY(18px) scale(.985); filter: blur(6px); }
-    to  { opacity:1; transform:none; filter:none; }
-  }
-
-  /* Keep both panels a similar height so toggling doesn't jolt the page */
-  @media (min-width: 1024px){
-    .case-grid{ min-height: 900px; }
-  }
-
-  .tab-btn{ transition: color .3s ease, background-color .3s ease, transform .3s cubic-bezier(.16,1,.3,1); }
-  .tab-btn:hover{ transform: scale(1.03); }
-  .tab-indicator{ transition: transform .5s cubic-bezier(.16,1,.3,1), width .5s cubic-bezier(.16,1,.3,1); }
-
-  /* Browser chrome */
-  .chrome-dot{ width:10px; height:10px; border-radius:99px; }
-
-  /* --- "Before" mockup: deliberately generic 2009 local-business site --- */
-  .old-site{
-    background:#ffffff;
-    color:#111;
-    font-family: "Times New Roman", Times, serif;
-    line-height:1.45;
-  }
-  .old-site a{ color:#0000EE; text-decoration:underline; }
-  .old-site .old-banner{
-    background:#e9e9e9;
-    border-bottom:2px solid #999;
-    text-align:center;
-  }
-  .old-site .old-nav{
-    background:#f3f3f3;
-    border-bottom:1px solid #bbb;
-    font-size:12px;
-    text-align:center;
-  }
-  .old-site .imgbox{
-    background:
-      repeating-linear-gradient(45deg,#e4e4e4 0 8px,#efefef 8px 16px);
-    border:1px solid #c4c4c4;
-    color:#8a8a8a;
-    display:flex; align-items:center; justify-content:center;
-    font-size:11px; font-family: Arial, sans-serif;
-  }
-  .old-site hr{ border:0; border-top:1px solid #ccc; margin:10px 0; }
-
-  /* --- "After" mockup: Dark Conservatory --- */
-  .new-site{
-    background:
-      radial-gradient(120% 90% at 50% -20%, rgba(201,162,39,.16), transparent 60%),
-      #12100C;
-    color:#EDE6D6;
-    font-family: Inter, sans-serif;
-  }
-  .new-site .serif{ font-family:"Playfair Display", Georgia, serif; }
-  .brass-rule{
-    height:1px;
-    background: linear-gradient(90deg, transparent, rgba(201,162,39,.85), transparent);
-  }
-  .brass-btn{
-    background: linear-gradient(180deg,#E3C464,#B8901F);
-    color:#1A1408;
-    box-shadow: 0 8px 22px -10px rgba(201,162,39,.85);
-  }
-  .keys{ display:flex; height:100%; }
-  .keys i{ flex:1; background:#F4EFE2; border-right:1px solid #c9c1ae; position:relative; }
-  .keys i.b::after{
-    content:"";
-    position:absolute; top:0; right:-22%;
-    width:44%; height:62%;
-    background:#171310;
-    z-index:2;
-  }
-
-  /* ---------- Metric dials ---------- */
-  .dial circle.track{ stroke: rgba(255,255,255,.09); }
-  .dial circle.value{
-    stroke-linecap: round;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-    transition: stroke-dashoffset 1.8s cubic-bezier(.16,1,.3,1);
-  }
-
-  /* ---------- Form ---------- */
-  .field{
-    background: rgba(255,255,255,.035);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius: 14px;
-    transition: border-color .3s ease, box-shadow .3s ease, background-color .3s ease;
-  }
-  .field:focus{
-    outline:none;
-    border-color: rgba(0,242,254,.6);
-    background: rgba(0,242,254,.045);
-    box-shadow: 0 0 0 4px rgba(0,242,254,.1);
-  }
-  .field::placeholder{ color: rgba(255,255,255,.32); }
-  select.field option{ background:#101014; color:#fff; }
-  .field.err{ border-color:#FF6B6B; box-shadow:0 0 0 4px rgba(255,107,107,.12); }
-
-  /* Scrolled nav. Defined here rather than toggled as Tailwind utility classes:
-     the Tailwind CDN build watches the DOM and reacts to class mutations, and
-     this toggles on every scroll past the threshold. */
-  #nav.nav-solid{
-    background: rgba(10,10,10,.72);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255,255,255,.07);
-  }
-
-  /* Nav underline */
-  .navlink{ position:relative; }
-  .navlink::after{
-    content:""; position:absolute; left:0; bottom:-6px;
-    height:1px; width:0; background: var(--grad);
-    transition: width .4s cubic-bezier(.16,1,.3,1);
-  }
-  .navlink:hover::after{ width:100%; }
-
-  /* ============ HERO MOTION LAYER ============ */
-
-  /* Scroll progress rail */
-  #progress{
-    position:fixed; top:0; left:0; height:2px; width:0;
-    background: var(--grad);
-    box-shadow: 0 0 16px rgba(0,242,254,.9);
-    z-index:70;
-    transition: width .12s linear;
-    pointer-events:none;
-  }
-
-  /* Soft light that follows the cursor */
-  #orb{
-    position:fixed; top:0; left:0;
-    width:520px; height:520px; margin:-260px 0 0 -260px;
-    border-radius:50%;
-    pointer-events:none; z-index:1;
-    background: radial-gradient(circle, rgba(0,242,254,.11), rgba(123,92,255,.06) 44%, transparent 68%);
-    opacity:0;
-    transition: opacity .8s ease;
-    will-change: transform;
-  }
-
-  /* Headline: line-by-line mask reveal */
-  .line-mask{
-    display:block;
-    overflow:hidden;
-    padding-bottom:.1em;
-    margin-bottom:-.1em;
-  }
-  .line-inner{
-    display:block;
-    transform: translateY(112%);
-    opacity:0;
-    transition: transform 1.15s cubic-bezier(.16,1,.3,1), opacity .9s cubic-bezier(.16,1,.3,1);
-    transition-delay: var(--d, 0ms);
-    will-change: transform;
-  }
-  .lit .line-inner{ transform: translateY(0); opacity:1; }
-
-  /* Living gradient for the focal words */
-  .grad-flow{
-    background: linear-gradient(100deg,#00F2FE,#4FACFE,#7B5CFF,#4FACFE,#00F2FE);
-    background-size: 300% 100%;
-    -webkit-background-clip: text;
-            background-clip: text;
-    color: transparent;
-    animation: flow 9s linear infinite;
-  }
-  @keyframes flow{ to{ background-position: 300% 0; } }
-
-  /* Cyan scan sweeping down the grid */
-  .scanline{
-    position:absolute; left:0; right:0; top:0;
-    height:180px;
-    background: linear-gradient(to bottom, transparent, rgba(0,242,254,.085), rgba(0,242,254,.02), transparent);
-    animation: scan 9s cubic-bezier(.55,0,.45,1) infinite;
-    pointer-events:none;
-  }
-  @keyframes scan{
-    0%   { transform: translateY(-200px); opacity:0; }
-    12%  { opacity:1; }
-    88%  { opacity:1; }
-    100% { transform: translateY(105vh); opacity:0; }
-  }
-
-  /* Rotating conic ring around the availability badge */
-  .ring{ position:relative; border-radius:999px; overflow:hidden; padding:1px; }
-  .ring-spin{
-    position:absolute; left:50%; top:50%;
-    width:240%; aspect-ratio:1/1;
-    margin:-120% 0 0 -120%;
-    background: conic-gradient(from 0deg, transparent 0 58%, rgba(0,242,254,.95) 74%, rgba(123,92,255,.9) 88%, transparent 100%);
-    animation: spin 5s linear infinite;
-  }
-  @keyframes spin{ to{ transform: rotate(360deg); } }
-
-  /* Parallax layers */
-  .plx{ will-change: transform; }
-
-  /* Hero content drifts and dissolves on scroll */
-  #heroInner{ will-change: transform, opacity; }
-
-  /* Stat cells light up */
-  .stat{ position:relative; transition: background-color .5s ease; }
-  .stat::before{
-    content:""; position:absolute; top:0; left:0; right:0; height:1px;
-    background: var(--grad);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .7s cubic-bezier(.16,1,.3,1);
-  }
-  .stat:hover{ background-color: rgba(0,242,254,.045); }
-  .stat:hover::before{ transform: scaleX(1); }
-
-  /* Shared card lift */
-  .lift{ transition: transform .55s cubic-bezier(.16,1,.3,1), box-shadow .55s ease, border-color .55s ease; }
-  .lift:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 34px 74px -36px rgba(0,242,254,.5);
-    border-color: rgba(0,242,254,.26);
-  }
-
-  /* Eyebrow rules draw themselves in */
-  .eyebrow-line{ width:0; transition: width .9s cubic-bezier(.16,1,.3,1) .15s; }
-  .reveal.in .eyebrow-line{ width:2.5rem; }
-
-  /* Scroll cue */
-  @keyframes cue{
-    0%,100%{ transform: scaleY(.35); opacity:.35; transform-origin: top; }
-    50%    { transform: scaleY(1);   opacity:1;   transform-origin: top; }
-  }
-  .cue-line{ animation: cue 2.4s ease-in-out infinite; }
-
-  @media (prefers-reduced-motion: reduce){
-    *, *::before, *::after{
-      animation-duration:.001ms !important;
-      animation-iteration-count:1 !important;
-      transition-duration:.001ms !important;
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "WebDesignBusiness"],
+      "@id": "https://wrightclickstudio.com/#business",
+      "name": "Wright Click Studios",
+      "description": "Hand-built websites for local businesses, churches and ministries across the Charlotte metro. Flat $500 pricing with a free evaluation and design preview.",
+      "url": "https://wrightclickstudio.com/",
+      "telephone": "+1-803-322-0824",
+      "email": "hello@wrightclickstudio.com",
+      "priceRange": "$$",
+      "image": "https://wrightclickstudio.com/images/og-cover.jpg",
+      "logo": "https://wrightclickstudio.com/images/favicon.svg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Fort Mill",
+        "addressRegion": "SC",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Fort Mill", "containedInPlace": { "@type": "State", "name": "South Carolina" } },
+        { "@type": "City", "name": "Rock Hill", "containedInPlace": { "@type": "State", "name": "South Carolina" } },
+        { "@type": "City", "name": "Tega Cay", "containedInPlace": { "@type": "State", "name": "South Carolina" } },
+        { "@type": "City", "name": "Indian Land", "containedInPlace": { "@type": "State", "name": "South Carolina" } },
+        { "@type": "City", "name": "Charlotte", "containedInPlace": { "@type": "State", "name": "North Carolina" } },
+        { "@type": "City", "name": "Huntersville", "containedInPlace": { "@type": "State", "name": "North Carolina" } }
+      ],
+      "knowsAbout": ["Website design", "Church website design", "Local SEO", "Google Business Profile", "Landing pages", "Sermon video publishing"],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Free evaluation and custom design preview",
+          "description": "A real section of the new homepage, designed before any payment.",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Custom website, built by hand",
+          "price": "500",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "500",
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": false
+          }
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website design services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Small business website design", "serviceType": "Web design" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Church and ministry website design", "serviceType": "Web design" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website redesign", "serviceType": "Web design" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Local SEO and Google Business Profile setup", "serviceType": "SEO" } }
+        ]
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-803-322-0824",
+        "contactType": "sales",
+        "areaServed": ["US-SC", "US-NC"],
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://wrightclickstudio.com/#website",
+      "url": "https://wrightclickstudio.com/",
+      "name": "Wright Click Studios",
+      "publisher": { "@id": "https://wrightclickstudio.com/#business" },
+      "inLanguage": "en-US"
     }
-    .reveal{ opacity:1; transform:none; }
-    .line-inner{ transform:none !important; opacity:1 !important; }
-    .eyebrow-line{ width:2.5rem; }
-    #particles, .scanline, .ring-spin, #orb{ display:none !important; }
-  }
-</style>
-
-<style>
-*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:JetBrains Mono,ui-monospace,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0}.inset-x-0{left:0;right:0}.-bottom-56{bottom:-14rem}.-left-40{left:-10rem}.-left-56{left:-14rem}.-right-20{right:-5rem}.-right-24{right:-6rem}.-right-32{right:-8rem}.-top-20{top:-5rem}.-top-24{top:-6rem}.-top-40{top:-10rem}.bottom-0{bottom:0}.bottom-1{bottom:.25rem}.bottom-1\.5{bottom:.375rem}.bottom-8{bottom:2rem}.bottom-\[-14rem\]{bottom:-14rem}.left-0{left:0}.left-1{left:.25rem}.left-1\/2{left:50%}.left-1\/3{left:33.333333%}.top-0{top:0}.top-1{top:.25rem}.top-1\.5{top:.375rem}.top-1\/4{top:25%}.top-8{top:2rem}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:.25rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:.5rem}.mb-2\.5{margin-bottom:.625rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-9{margin-bottom:2.25rem}.ml-3{margin-left:.75rem}.mt-1{margin-top:.25rem}.mt-1\.5{margin-top:.375rem}.mt-10{margin-top:2.5rem}.mt-11{margin-top:2.75rem}.mt-12{margin-top:3rem}.mt-2{margin-top:.5rem}.mt-2\.5{margin-top:.625rem}.mt-20{margin-top:5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-7{margin-top:1.75rem}.mt-8{margin-top:2rem}.mt-9{margin-top:2.25rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.table{display:table}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-16{height:4rem}.h-2{height:.5rem}.h-20{height:5rem}.h-24{height:6rem}.h-52{height:13rem}.h-56{height:14rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-72{height:18rem}.h-9{height:2.25rem}.h-\[34rem\]{height:34rem}.h-\[38rem\]{height:38rem}.h-\[40rem\]{height:40rem}.h-\[42rem\]{height:42rem}.h-\[46rem\]{height:46rem}.h-full{height:100%}.h-px{height:1px}.min-h-\[100svh\]{min-height:100svh}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-16{width:4rem}.w-2{width:.5rem}.w-28{width:7rem}.w-56{width:14rem}.w-7{width:1.75rem}.w-72{width:18rem}.w-9{width:2.25rem}.w-\[34rem\]{width:34rem}.w-\[38rem\]{width:38rem}.w-\[40rem\]{width:40rem}.w-\[42rem\]{width:42rem}.w-\[46rem\]{width:46rem}.w-full{width:100%}.w-max{width:-moz-max-content;width:max-content}.w-px{width:1px}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-\[74px\]{max-width:74px}.max-w-md{max-width:28rem}.max-w-screen{max-width:1240px}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1{--tw-translate-x:-0.25rem}.-translate-x-1,.-translate-x-1\/2{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-x-1\/2{--tw-translate-x:-50%}.transform{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes ping{75%,to{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0,0,.2,1) infinite}.resize-none{resize:none}.resize{resize:both}.appearance-none{-webkit-appearance:none;-moz-appearance:none;appearance:none}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-14{gap:3.5rem}.gap-2{gap:.5rem}.gap-3{gap:.75rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.gap-px{gap:1px}.gap-x-7{-moz-column-gap:1.75rem;column-gap:1.75rem}.gap-y-2{row-gap:.5rem}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem*var(--tw-space-y-reverse))}.space-y-3\.5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.875rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.875rem*var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem*var(--tw-space-y-reverse))}.space-y-5>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.scroll-smooth{scroll-behavior:smooth}.whitespace-nowrap{white-space:nowrap}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-\[1\.75rem\]{border-radius:1.75rem}.rounded-\[2rem\]{border-radius:2rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.rounded-t-md{border-top-left-radius:.375rem;border-top-right-radius:.375rem}.border{border-width:1px}.border-y{border-top-width:1px}.border-b,.border-y{border-bottom-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-black{--tw-border-opacity:1;border-color:rgb(0 0 0/var(--tw-border-opacity,1))}.border-black\/40{border-color:rgba(0,0,0,.4)}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255/var(--tw-border-opacity,1))}.border-white\/10{border-color:hsla(0,0%,100%,.1)}.border-white\/5{border-color:hsla(0,0%,100%,.05)}.border-white\/\[\.06\]{border-color:hsla(0,0%,100%,.06)}.border-white\/\[\.07\]{border-color:hsla(0,0%,100%,.07)}.bg-\[\#141416\]{--tw-bg-opacity:1;background-color:rgb(20 20 22/var(--tw-bg-opacity,1))}.bg-\[\#1a1a1c\]{--tw-bg-opacity:1;background-color:rgb(26 26 28/var(--tw-bg-opacity,1))}.bg-\[\#232326\]{--tw-bg-opacity:1;background-color:rgb(35 35 38/var(--tw-bg-opacity,1))}.bg-\[\#28C840\]{--tw-bg-opacity:1;background-color:rgb(40 200 64/var(--tw-bg-opacity,1))}.bg-\[\#FEBC2E\]{--tw-bg-opacity:1;background-color:rgb(254 188 46/var(--tw-bg-opacity,1))}.bg-\[\#FF5F57\]{--tw-bg-opacity:1;background-color:rgb(255 95 87/var(--tw-bg-opacity,1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0/var(--tw-bg-opacity,1))}.bg-black\/40{background-color:rgba(0,0,0,.4)}.bg-cyan{--tw-bg-opacity:1;background-color:rgb(0 242 254/var(--tw-bg-opacity,1))}.bg-ink{--tw-bg-opacity:1;background-color:rgb(10 10 10/var(--tw-bg-opacity,1))}.bg-ink\/80{background-color:hsla(0,0%,4%,.8)}.bg-ink\/95{background-color:hsla(0,0%,4%,.95)}.bg-ink2{--tw-bg-opacity:1;background-color:rgb(14 14 16/var(--tw-bg-opacity,1))}.bg-ink2\/60{background-color:rgba(14,14,16,.6)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\/\[\.04\]{background-color:hsla(0,0%,100%,.04)}.bg-white\/\[\.07\]{background-color:hsla(0,0%,100%,.07)}.bg-gradient-to-b{background-image:linear-gradient(to bottom,var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}.from-cyan{--tw-gradient-from:#00f2fe var(--tw-gradient-from-position);--tw-gradient-to:rgba(0,242,254,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.from-ink{--tw-gradient-from:#0a0a0a var(--tw-gradient-from-position);--tw-gradient-to:hsla(0,0%,4%,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.fill-white{fill:#fff}.p-0{padding:0}.p-1{padding:.25rem}.p-1\.5{padding:.375rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.p-8{padding:2rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-28{padding-top:7rem;padding-bottom:7rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.py-3\.5{padding-top:.875rem;padding-bottom:.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-24{padding-bottom:6rem}.pb-6{padding-bottom:1.5rem}.pb-9{padding-bottom:2.25rem}.pt-1{padding-top:.25rem}.pt-11{padding-top:2.75rem}.pt-32{padding-top:8rem}.pt-5{padding-top:1.25rem}.text-left{text-align:left}.text-center{text-align:center}.font-body{font-family:Inter,system-ui,sans-serif}.font-display{font-family:Space Grotesk,system-ui,sans-serif}.font-mono{font-family:JetBrains Mono,ui-monospace,monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-\[10\.5px\]{font-size:10.5px}.text-\[10px\]{font-size:10px}.text-\[11\.5px\]{font-size:11.5px}.text-\[11px\]{font-size:11px}.text-\[12\.5px\]{font-size:12.5px}.text-\[12px\]{font-size:12px}.text-\[13\.5px\]{font-size:13.5px}.text-\[13px\]{font-size:13px}.text-\[14\.5px\]{font-size:14.5px}.text-\[14px\]{font-size:14px}.text-\[15\.5px\]{font-size:15.5px}.text-\[15px\]{font-size:15px}.text-\[9\.5px\]{font-size:9.5px}.text-\[clamp\(1\.02rem\2c 1\.5vw\2c 1\.32rem\)\]{font-size:clamp(1.02rem,1.5vw,1.32rem)}.text-\[clamp\(1\.5rem\2c 2\.6vw\2c 1\.9rem\)\]{font-size:clamp(1.5rem,2.6vw,1.9rem)}.text-\[clamp\(1\.7rem\2c 3\.6vw\2c 2\.9rem\)\]{font-size:clamp(1.7rem,3.6vw,2.9rem)}.text-\[clamp\(1\.9rem\2c 5vw\2c 3\.9rem\)\]{font-size:clamp(1.9rem,5vw,3.9rem)}.text-\[clamp\(2\.1rem\2c 5\.2vw\2c 4\.1rem\)\]{font-size:clamp(2.1rem,5.2vw,4.1rem)}.text-\[clamp\(2\.1rem\2c 5vw\2c 3\.8rem\)\]{font-size:clamp(2.1rem,5vw,3.8rem)}.text-\[clamp\(2\.9rem\2c 8\.2vw\2c 7\.4rem\)\]{font-size:clamp(2.9rem,8.2vw,7.4rem)}.text-\[clamp\(2rem\2c 4\.6vw\2c 3\.5rem\)\]{font-size:clamp(2rem,4.6vw,3.5rem)}.text-lg{font-size:1.125rem}.text-lg,.text-xl{line-height:1.75rem}.text-xl{font-size:1.25rem}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.normal-case{text-transform:none}.italic{font-style:italic}.leading-\[\.92\]{line-height:.92}.leading-\[1\.02\]{line-height:1.02}.leading-\[1\.03\]{line-height:1.03}.leading-\[1\.04\]{line-height:1.04}.leading-\[1\.05\]{line-height:1.05}.leading-\[1\.06\]{line-height:1.06}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.tracking-\[-\.035em\]{letter-spacing:-.035em}.tracking-\[-\.045em\]{letter-spacing:-.045em}.tracking-\[-\.04em\]{letter-spacing:-.04em}.tracking-\[\.14em\]{letter-spacing:.14em}.tracking-\[\.16em\]{letter-spacing:.16em}.tracking-\[\.18em\]{letter-spacing:.18em}.tracking-\[\.22em\]{letter-spacing:.22em}.tracking-\[\.24em\]{letter-spacing:.24em}.tracking-\[\.26em\]{letter-spacing:.26em}.tracking-\[\.2em\]{letter-spacing:.2em}.tracking-\[\.32em\]{letter-spacing:.32em}.tracking-\[\.34em\]{letter-spacing:.34em}.tracking-\[\.3em\]{letter-spacing:.3em}.tracking-normal{letter-spacing:0}.tracking-tight{letter-spacing:-.025em}.tracking-wide{letter-spacing:.025em}.text-\[\#04070A\]{--tw-text-opacity:1;color:rgb(4 7 10/var(--tw-text-opacity,1))}.text-\[\#FF6B6B\]{--tw-text-opacity:1;color:rgb(255 107 107/var(--tw-text-opacity,1))}.text-cyan{--tw-text-opacity:1;color:rgb(0 242 254/var(--tw-text-opacity,1))}.text-cyan\/50{color:rgba(0,242,254,.5)}.text-cyan\/70{color:rgba(0,242,254,.7)}.text-cyan\/80{color:rgba(0,242,254,.8)}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.text-white\/25{color:hsla(0,0%,100%,.25)}.text-white\/30{color:hsla(0,0%,100%,.3)}.text-white\/35{color:hsla(0,0%,100%,.35)}.text-white\/40{color:hsla(0,0%,100%,.4)}.text-white\/45{color:hsla(0,0%,100%,.45)}.text-white\/50{color:hsla(0,0%,100%,.5)}.text-white\/55{color:hsla(0,0%,100%,.55)}.text-white\/60{color:hsla(0,0%,100%,.6)}.text-white\/65{color:hsla(0,0%,100%,.65)}.text-white\/70{color:hsla(0,0%,100%,.7)}.text-white\/80{color:hsla(0,0%,100%,.8)}.text-white\/\[\.09\]{color:hsla(0,0%,100%,.09)}.underline{text-decoration-line:underline}.underline-offset-2{text-underline-offset:2px}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-70{opacity:.7}.opacity-90{opacity:.9}.opacity-95{opacity:.95}.opacity-\[\.12\]{opacity:.12}.opacity-\[\.13\]{opacity:.13}.shadow-\[0_18px_50px_-16px_rgba\(0\2c 242\2c 254\2c \.8\)\]{--tw-shadow:0 18px 50px -16px rgba(0,242,254,.8);--tw-shadow-colored:0 18px 50px -16px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-\[0_50px_120px_-60px_rgba\(0\2c 0\2c 0\2c \.9\)\]{--tw-shadow:0 50px 120px -60px rgba(0,0,0,.9);--tw-shadow-colored:0 50px 120px -60px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-\[0_60px_140px_-60px_rgba\(0\2c 242\2c 254\2c \.45\)\]{--tw-shadow:0 60px 140px -60px rgba(0,242,254,.45);--tw-shadow-colored:0 60px 140px -60px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-\[0_8px_28px_-10px_rgba\(0\2c 242\2c 254\2c \.8\)\]{--tw-shadow:0 8px 28px -10px rgba(0,242,254,.8);--tw-shadow-colored:0 8px 28px -10px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.ring{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.blur{--tw-blur:blur(8px)}.blur,.blur-3xl{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-3xl{--tw-blur:blur(64px)}.filter{filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-filter{-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-300{transition-duration:.3s}.duration-500{transition-duration:.5s}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-white\/5:hover{background-color:hsla(0,0%,100%,.05)}.hover\:text-cyan:hover{--tw-text-opacity:1;color:rgb(0 242 254/var(--tw-text-opacity,1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.group:hover .group-hover\:rotate-6{--tw-rotate:6deg}.group:hover .group-hover\:rotate-6,.group:hover .group-hover\:scale-110{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1}@media (min-width:640px){.sm\:block{display:block}.sm\:flex{display:flex}.sm\:w-40{width:10rem}.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sm\:flex-row{flex-direction:row}.sm\:p-10{padding:2.5rem}.sm\:p-14{padding:3.5rem}.sm\:p-6{padding:1.5rem}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:px-9{padding-left:2.25rem;padding-right:2.25rem}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}}@media (min-width:1024px){.lg\:block{display:block}.lg\:flex{display:flex}.lg\:hidden{display:none}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4,minmax(0,1fr))}.lg\:grid-cols-\[1\.35fr_1fr\]{grid-template-columns:1.35fr 1fr}.lg\:grid-cols-\[1fr_1\.15fr\]{grid-template-columns:1fr 1.15fr}.lg\:flex-row{flex-direction:row}.lg\:items-end{align-items:flex-end}.lg\:justify-between{justify-content:space-between}.lg\:gap-20{gap:5rem}.lg\:p-20{padding:5rem}.lg\:px-10{padding-left:2.5rem;padding-right:2.5rem}.lg\:py-36{padding-top:9rem;padding-bottom:9rem}.lg\:py-40{padding-top:10rem;padding-bottom:10rem}}
-</style>
-
+  ]
+}
+</script>
 </head>
 
 <body class="font-body bg-ink text-white antialiased grain">
+
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <div id="progress"></div>
 <div id="orb"></div>
@@ -497,11 +159,12 @@
         </div>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-10 text-[13.5px] text-white/65">
-        <a href="#work"     class="navlink hover:text-white transition-colors duration-300">Before &amp; After</a>
-        <a href="#services" class="navlink hover:text-white transition-colors duration-300">What We Build</a>
-        <a href="#value"    class="navlink hover:text-white transition-colors duration-300">The Offer</a>
-        <a href="#process"  class="navlink hover:text-white transition-colors duration-300">Process</a>
+      <nav class="hidden lg:flex items-center gap-8 text-[13.5px] text-white/65" aria-label="Primary">
+        <a href="/#work"     class="navlink hover:text-white transition-colors duration-300">Before &amp; After</a>
+        <a href="/#services" class="navlink hover:text-white transition-colors duration-300">What We Build</a>
+        <a href="/church-website-design.html" class="navlink hover:text-white transition-colors duration-300">Churches</a>
+        <a href="/#areas"    class="navlink hover:text-white transition-colors duration-300">Service Areas</a>
+        <a href="/#value"    class="navlink hover:text-white transition-colors duration-300">The Offer</a>
       </nav>
 
       <div class="hidden lg:block">
@@ -521,14 +184,19 @@
   <!-- Mobile menu -->
   <div id="mobileMenu" class="lg:hidden hidden px-6 pb-6">
     <div class="glass-deep rounded-3xl p-6 flex flex-col gap-1">
-      <a href="#work"     class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">Before &amp; After</a>
-      <a href="#services" class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">What We Build</a>
-      <a href="#value"    class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">The Offer</a>
-      <a href="#process"  class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">Process</a>
-      <a href="#contact"  class="mob-link btn btn-primary sheen mt-4 py-3.5">Claim Your Free Preview</a>
+      <a href="/#work"     class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">Before &amp; After</a>
+      <a href="/#services" class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">What We Build</a>
+      <a href="/church-website-design.html" class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">Churches &amp; Ministries</a>
+      <a href="/#areas"    class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">Service Areas</a>
+      <a href="/#value"    class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">The Offer</a>
+      <a href="/#process"  class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">Process</a>
+      <a href="tel:+18033220824" data-loc="mobile-menu" class="mob-link py-3 px-3 rounded-xl text-white/80 hover:text-white hover:bg-white/5 transition-all duration-300">Call or text (803) 322-0824</a>
+      <a href="/#contact"  class="mob-link btn btn-primary sheen mt-4 py-3.5">Claim Your Free Preview</a>
     </div>
   </div>
 </header>
+
+<main id="main">
 
 <!-- ============================ HERO ============================ -->
 <section id="top" class="relative min-h-[100svh] flex items-center overflow-hidden pt-32 pb-24">
@@ -556,14 +224,18 @@
   <div class="relative max-w-screen mx-auto px-6 lg:px-10 w-full">
     <div id="heroInner" class="max-w-5xl">
 
+      <!-- The old badge here read "2 spots left this month" and was hardcoded,
+           so it said the same thing on every visit forever. Fake scarcity that
+           never moves reads as a lie the second time someone lands on the page,
+           and it costs more trust than it buys urgency. Replaced with something
+           that is simply true and does local-SEO work at the same time. -->
       <div class="reveal ring inline-block mb-9" style="--d:0ms">
         <span class="ring-spin"></span>
         <div class="relative flex items-center gap-3 rounded-full bg-ink/95 px-4 py-2">
           <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan opacity-70"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan"></span>
           </span>
-          <span class="text-[11.5px] uppercase tracking-[.24em] text-white/70">Now booking — 2 spots left this month</span>
+          <span class="text-[11.5px] uppercase tracking-[.24em] text-white/70">Fort Mill &middot; Rock Hill &middot; Charlotte</span>
         </div>
       </div>
 
@@ -572,6 +244,10 @@
         <span class="line-mask"><span class="line-inner" style="--d:190ms">Businesses The</span></span>
         <span class="line-mask"><span class="line-inner" style="--d:300ms"><span class="grad-flow">Website</span> They</span></span>
         <span class="line-mask"><span class="line-inner" style="--d:410ms">Actually Deserve.</span></span>
+        <!-- Keyword-bearing half of the H1. The punchy line above carries the
+             emotion; this one carries "website design" + the towns, so the H1
+             is actually about something a person types into Google. -->
+        <span class="line-mask"><span class="line-inner h1-sub" style="--d:520ms">Website design for small businesses and churches in&nbsp;Fort&nbsp;Mill, Rock&nbsp;Hill&nbsp;&amp;&nbsp;Charlotte.</span></span>
       </h1>
 
       <p class="reveal mt-9 text-[clamp(1.02rem,1.5vw,1.32rem)] leading-relaxed text-white/55 max-w-2xl font-light" style="--d:620ms">
@@ -580,33 +256,37 @@
         actually work on.
       </p>
 
-      <div class="reveal mt-11 flex flex-col sm:flex-row gap-4" style="--d:720ms">
+      <div class="reveal mt-11 flex flex-col sm:flex-row gap-4" style="--d:720ms" data-callbar-after>
         <a href="#contact" class="btn btn-primary sheen magnetic px-8 py-4 text-[15px]">
           Claim Your Custom Design Preview
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="#work" class="btn btn-ghost magnetic px-8 py-4 text-[15px]">
-          See The Transformation
+        <a href="tel:+18033220824" data-loc="hero" class="btn btn-ghost magnetic px-8 py-4 text-[15px]">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Call or text (803) 322-0824
         </a>
       </div>
 
-      <!-- stat strip -->
+      <!-- Stat strip. The previous four were about us, not the buyer: "100%
+           built by hand", "0 website builders used", and a "<1s load time"
+           claim the page itself could not meet. These four are all things the
+           buyer gets, and all of them are true. -->
       <div class="reveal mt-20 grid grid-cols-2 md:grid-cols-4 gap-px rounded-2xl overflow-hidden border border-white/[.07] bg-white/[.04] max-w-3xl" style="--d:820ms">
         <div class="stat bg-ink/80 px-5 py-6">
-          <div class="font-display text-3xl font-bold grad-text"><span class="counter" data-count="100">0</span>%</div>
-          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Built by hand</div>
-        </div>
-        <div class="stat bg-ink/80 px-5 py-6">
-          <div class="font-display text-3xl font-bold grad-text">&lt;<span class="counter" data-count="1">0</span>s</div>
-          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Load time</div>
-        </div>
-        <div class="stat bg-ink/80 px-5 py-6">
           <div class="font-display text-3xl font-bold grad-text">$<span class="counter" data-count="500">0</span></div>
-          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">The most you’d pay</div>
+          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Flat, quoted up front</div>
         </div>
         <div class="stat bg-ink/80 px-5 py-6">
-          <div class="font-display text-3xl font-bold grad-text"><span class="counter" data-count="0">0</span></div>
-          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Website builders used</div>
+          <div class="font-display text-3xl font-bold grad-text">~<span class="counter" data-count="2">0</span> wks</div>
+          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Idea to live site</div>
+        </div>
+        <div class="stat bg-ink/80 px-5 py-6">
+          <div class="font-display text-3xl font-bold grad-text">Free</div>
+          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Design preview first</div>
+        </div>
+        <div class="stat bg-ink/80 px-5 py-6">
+          <div class="font-display text-3xl font-bold grad-text">Yours</div>
+          <div class="mt-1.5 text-[10.5px] uppercase tracking-[.2em] text-white/40">Site and domain</div>
         </div>
       </div>
     </div>
@@ -622,6 +302,7 @@
 <section class="relative border-y border-white/[.06] py-6 bg-ink2/60 overflow-hidden marquee">
   <div class="fade-x">
     <div class="marquee-track flex gap-14 w-max whitespace-nowrap text-[12px] uppercase tracking-[.32em] text-white/30 font-medium">
+      <span>Churches &amp; Ministries</span><span class="text-cyan/50">✦</span>
       <span>Piano Studios</span><span class="text-cyan/50">✦</span>
       <span>Barbershops</span><span class="text-cyan/50">✦</span>
       <span>Law Offices</span><span class="text-cyan/50">✦</span>
@@ -631,6 +312,7 @@
       <span>Private Tutors</span><span class="text-cyan/50">✦</span>
       <span>Boutique Fitness</span><span class="text-cyan/50">✦</span>
       <!-- duplicate for seamless loop -->
+      <span>Churches &amp; Ministries</span><span class="text-cyan/50">✦</span>
       <span>Piano Studios</span><span class="text-cyan/50">✦</span>
       <span>Barbershops</span><span class="text-cyan/50">✦</span>
       <span>Law Offices</span><span class="text-cyan/50">✦</span>
@@ -869,15 +551,15 @@
             <div class="grid grid-cols-3 border-t" style="border-color:rgba(201,162,39,.22)">
               <div class="px-4 py-5 text-center border-r" style="border-color:rgba(201,162,39,.16)">
                 <div class="serif text-xl" style="color:#D8B45C;">20+</div>
-                <div class="text-[9.5px] uppercase tracking-[.2em] mt-1" style="color:rgba(237,230,214,.45)">Years Teaching</div>
+                <div class="text-[9.5px] uppercase tracking-[.2em] mt-1" style="color:rgba(237,230,214,.62)">Years Teaching</div>
               </div>
               <div class="px-4 py-5 text-center border-r" style="border-color:rgba(201,162,39,.16)">
                 <div class="serif text-xl" style="color:#D8B45C;">2×</div>
-                <div class="text-[9.5px] uppercase tracking-[.2em] mt-1" style="color:rgba(237,230,214,.45)">Yearly Recitals</div>
+                <div class="text-[9.5px] uppercase tracking-[.2em] mt-1" style="color:rgba(237,230,214,.62)">Yearly Recitals</div>
               </div>
               <div class="px-4 py-5 text-center">
                 <div class="serif text-xl" style="color:#D8B45C;">All Ages</div>
-                <div class="text-[9.5px] uppercase tracking-[.2em] mt-1" style="color:rgba(237,230,214,.45)">Skill Levels</div>
+                <div class="text-[9.5px] uppercase tracking-[.2em] mt-1" style="color:rgba(237,230,214,.62)">Skill Levels</div>
               </div>
             </div>
           </div>
@@ -1074,6 +756,68 @@
 </section>
 
 <!-- ============================ VALUE / GUARANTEE ============================ -->
+<!-- ============================ CHURCHES ============================
+     The previous build never used the word "church" anywhere, in the marquee,
+     the copy, or the business-type dropdown — so a pastor landing on it saw
+     nothing addressed to them. This band exists to catch that visitor and
+     hand them to a page written for how churches actually decide. -->
+<section id="churches" class="sec sec--line relative overflow-hidden">
+  <div class="aurora a-violet drift-slower w-[34rem] h-[34rem] -top-40 -right-32" style="opacity:.45"></div>
+
+  <div class="relative max-w-screen mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-20 items-start">
+
+      <div class="reveal">
+        <p class="eyebrow"><em>Churches &amp; Ministries</em></p>
+        <h2>A church website is<br>a different job.</h2>
+        <div class="prose mt-7">
+          <p>
+            Most of the people who visit a church website are not members. They are someone
+            who moved here in March, or someone having the worst month of their life at
+            11pm on a Tuesday. They came to answer three questions: <strong>when do you meet,
+            where do I park, and what happens when I walk in.</strong>
+          </p>
+          <p>
+            Most church sites bury all three under an events calendar nobody updated since
+            spring. We build the other kind.
+          </p>
+        </div>
+
+        <a href="/church-website-design.html" class="btn btn-primary sheen magnetic px-7 py-3.5 text-[14.5px] mt-9">
+          Church website design
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal" style="--d:120ms">
+        <div class="cards cards--2 !mt-0">
+          <article class="pcard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></svg></span>
+            <h3>Service times, first thing</h3>
+            <p>Times, address and parking above the fold on a phone — not three taps deep behind a hero video.</p>
+          </article>
+          <article class="pcard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.4-7.5-9.6A4.4 4.4 0 0 1 12 8.4a4.4 4.4 0 0 1 7.5 2.5c0 5.2-7.5 9.6-7.5 9.6Z"/></svg></span>
+            <h3>An "I'm new here" path</h3>
+            <p>One honest page that answers what to wear, where kids go, and how long it lasts.</p>
+          </article>
+          <article class="pcard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="13" rx="2.5"/><path d="M2.5 10.5h19M6.5 15h3"/></svg></span>
+            <h3>Giving that works on a phone</h3>
+            <p>Connected to whatever platform you already use. Two taps from the home page, no app to install.</p>
+          </article>
+          <article class="pcard">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 8.2v7.6l6.4-3.8z"/><rect x="2.5" y="4" width="19" height="16" rx="3"/></svg></span>
+            <h3>Sermons people can find</h3>
+            <p>An archive that is searchable and embeddable — plus the publishing pipeline that keeps it fed.</p>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="value" class="relative py-28 lg:py-40 overflow-hidden">
   <div class="aurora a-violet drift-slow w-[42rem] h-[42rem] top-0 left-1/2 -translate-x-1/2" style="opacity:.55"></div>
 
@@ -1184,6 +928,48 @@
 </section>
 
 <!-- ============================ CONTACT ============================ -->
+<!-- ============================ SERVICE AREAS ============================
+     The old page said "local businesses" 14 times and never once named a town,
+     which left Google nothing to rank it for locally. These are real pages with
+     their own copy, not doorway duplicates. -->
+<section id="areas" class="sec sec--line">
+  <div class="max-w-screen mx-auto px-6 lg:px-10">
+    <div class="reveal max-w-2xl">
+      <p class="eyebrow">Service Areas</p>
+      <h2>Built for the<br>Charlotte metro.</h2>
+      <div class="prose mt-7">
+        <p>
+          We work with businesses and churches on both sides of the state line — from Fort Mill
+          and Rock Hill up through Charlotte and the Lake Norman towns. Everything runs over
+          email, a private preview link, and a phone call when you want one, so the drive
+          never becomes the reason a project stalls.
+        </p>
+      </div>
+    </div>
+
+    <div class="areas reveal" style="--d:100ms">
+      <a class="area" href="/web-design-fort-mill-sc.html">
+        <span><b>Fort Mill, SC</b><br><span>Baxter, Kingsley &amp; Springfield</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="area" href="/web-design-rock-hill-sc.html">
+        <span><b>Rock Hill, SC</b><br><span>Old Town &amp; Knowledge Park</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="area" href="/web-design-charlotte-nc.html">
+        <span><b>Charlotte, NC</b><br><span>South End to the Lake</span></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <p class="mt-7 text-[14.5px] text-white/55 font-light max-w-2xl">
+      Also working in Tega Cay, Indian Land, Lancaster, Clover, York, Pineville, Matthews,
+      Huntersville and the rest of the Lake Norman area. Outside the metro? That has never
+      been a problem — <a href="#contact" class="text-cyan underline underline-offset-2">ask anyway</a>.
+    </p>
+  </div>
+</section>
+
 <section id="contact" class="relative py-28 lg:py-40 overflow-hidden border-t border-white/[.06]">
   <div class="aurora a-cyan drift-slower w-[40rem] h-[40rem] -bottom-56 -right-32" style="opacity:.5"></div>
 
@@ -1200,8 +986,9 @@
           Claim your <span class="grad-text">custom design preview.</span>
         </h2>
         <p class="reveal mt-6 text-white/50 text-lg font-light leading-relaxed max-w-md" style="--d:150ms">
-          Tell us about your business and we'll design a real piece of your new homepage — free, no
-          obligation, no sales call required. If you love it, we build the rest.
+          Tell us about your business or church and we'll design a real piece of your new homepage —
+          free, no obligation, no sales call required. If you love it, we build the rest.
+          Takes about fifteen seconds; only your name, who you are, and one way to reach you.
         </p>
 
         <div class="reveal mt-10 space-y-4" style="--d:220ms">
@@ -1228,8 +1015,8 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
             <div>
-              <div class="font-medium text-[14.5px]">Local businesses only</div>
-              <div class="text-white/40 text-[13.5px] font-light">We take a small number of builds at a time, on purpose.</div>
+              <div class="font-medium text-[14.5px]">No sales call unless you want one</div>
+              <div class="text-white/40 text-[13.5px] font-light">Happy to keep the whole thing over email if that's easier.</div>
             </div>
           </div>
         </div>
@@ -1255,58 +1042,74 @@
         <div class="glass-deep rounded-[1.75rem] p-7 sm:p-10 grad-border relative overflow-hidden">
           <div class="absolute -top-20 -right-20 w-56 h-56 rounded-full grad-bg opacity-[.12] blur-3xl pointer-events-none"></div>
 
-          <form id="inquiryForm" novalidate class="relative space-y-5">
+          <!-- Quick capture. The previous version required five fields including
+               a free-text essay, in exchange for something advertised as free.
+               Now three easy fields send a lead, contact can be EITHER email or
+               phone, and everything else lives behind a disclosure for the
+               people who want to say more. data-source tags the lead so it is
+               possible to tell which page is actually working. -->
+          <form id="inquiryForm" novalidate class="relative space-y-5" data-source="Home">
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
                 <label for="name" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Your Name</label>
-                <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your name"
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name"
                        class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
+                <p class="field-err" data-err-for="name"></p>
               </div>
               <div>
-                <label for="business" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Business Name</label>
-                <input id="business" name="business" type="text" required autocomplete="organization" placeholder="Your business name"
+                <label for="business" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Business Or Church</label>
+                <input id="business" name="business" type="text" autocomplete="organization" placeholder="What it's called"
                        class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
+                <p class="field-err" data-err-for="business"></p>
               </div>
             </div>
 
             <div class="grid sm:grid-cols-2 gap-5">
               <div>
                 <label for="email" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Email</label>
-                <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@yourbusiness.com"
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@yourbusiness.com"
                        class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
+                <p class="field-err" data-err-for="email"></p>
               </div>
               <div>
-                <label for="phone" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Phone <span class="normal-case tracking-normal text-white/25">(optional)</span></label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(704) 555-0140"
+                <label for="phone" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Phone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(803) 555-0140"
                        class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
               </div>
             </div>
+            <p class="hint">Either one is enough — whichever you'd rather we use.</p>
 
-            <div>
-              <label for="type" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Type Of Business</label>
-              <select id="type" name="type" required class="field w-full px-4 py-3.5 text-[14.5px] text-white appearance-none">
-                <option value="" disabled selected>Select one…</option>
-                <option>Studio / Instruction (music, art, dance)</option>
-                <option>Health, Wellness &amp; Med Spa</option>
-                <option>Trades &amp; Home Services</option>
-                <option>Food, Coffee &amp; Hospitality</option>
-                <option>Professional Services (legal, finance)</option>
-                <option>Retail &amp; Boutique</option>
-                <option>Something else entirely</option>
-              </select>
-            </div>
+            <details class="disclosure">
+              <summary>Add a few details (optional — helps us prep before we call)</summary>
+              <div class="more">
+                <div>
+                  <label for="type" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Type Of Business</label>
+                  <select id="type" name="type" class="field w-full px-4 py-3.5 text-[14.5px] text-white appearance-none">
+                    <option value="" selected>Select one…</option>
+                    <option>Church, ministry or nonprofit</option>
+                    <option>Studio / Instruction (music, art, dance)</option>
+                    <option>Health, Wellness &amp; Med Spa</option>
+                    <option>Trades &amp; Home Services</option>
+                    <option>Food, Coffee &amp; Hospitality</option>
+                    <option>Professional Services (legal, finance)</option>
+                    <option>Retail &amp; Boutique</option>
+                    <option>Something else entirely</option>
+                  </select>
+                </div>
 
-            <div>
-              <label for="message" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">What Should Your Site Do For You?</label>
-              <textarea id="message" name="message" rows="4" required placeholder="I want the phone to ring more, and a site that looks as good as the work we do…"
-                        class="field w-full px-4 py-3.5 text-[14.5px] text-white resize-none"></textarea>
-            </div>
+                <div>
+                  <label for="message" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">What Should Your Site Do For You?</label>
+                  <textarea id="message" name="message" rows="4" placeholder="I want the phone to ring more, and a site that looks as good as the work we do…"
+                            class="field w-full px-4 py-3.5 text-[14.5px] text-white resize-none"></textarea>
+                </div>
 
-            <div>
-              <label for="current" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Current Website <span class="normal-case tracking-normal text-white/25">(optional)</span></label>
-              <input id="current" name="current" type="text" placeholder="yourbusiness.com — or 'none yet'"
-                     class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
-            </div>
+                <div>
+                  <label for="current" class="block text-[11px] uppercase tracking-[.2em] text-white/40 mb-2.5">Current Website</label>
+                  <input id="current" name="current" type="text" placeholder="yourbusiness.com — or 'none yet'"
+                         class="field w-full px-4 py-3.5 text-[14.5px] text-white" />
+                </div>
+              </div>
+            </details>
 
             <!-- Honeypot. Hidden from people, and bots that tick it get rejected by Web3Forms. -->
             <input type="checkbox" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off"
@@ -1316,7 +1119,7 @@
                  style="border:1px solid rgba(255,107,107,.4); background:rgba(255,107,107,.1); color:#FFB4B4;"
                  role="alert">
               We couldn't send that just now. Please try again in a moment — or call or text us at
-              <a href="tel:+18033220824" class="font-semibold underline underline-offset-2" style="color:#FFD9D9;">(803) 322-0824</a>
+              <a href="tel:+18033220824" data-loc="form-error" class="font-semibold underline underline-offset-2" style="color:#FFD9D9;">(803) 322-0824</a>
               and we'll take it from there.
             </div>
 
@@ -1349,6 +1152,8 @@
 </section>
 
 <!-- ============================ FOOTER ============================ -->
+</main>
+
 <footer class="relative border-t border-white/[.07] py-12">
   <div class="max-w-screen mx-auto px-6 lg:px-10">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -1360,505 +1165,49 @@
         <span class="font-display font-semibold text-[14px] tracking-tight">Wright Click Studios</span>
       </a>
 
-      <nav class="flex flex-wrap items-center justify-center gap-x-7 gap-y-2 text-[13px] text-white/40">
-        <a href="#work" class="hover:text-white transition-colors duration-300">Before &amp; After</a>
-        <a href="#value" class="hover:text-white transition-colors duration-300">The Offer</a>
-        <a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a>
-        <a href="tel:+18033220824" class="text-white/60 hover:text-cyan transition-colors duration-300">(803) 322-0824</a>
+      <nav class="flex flex-wrap items-center justify-center gap-x-7 gap-y-2 text-[13px] text-white/40" aria-label="Footer">
+        <a href="/#work" class="hover:text-white transition-colors duration-300">Before &amp; After</a>
+        <a href="/church-website-design.html" class="hover:text-white transition-colors duration-300">Church Websites</a>
+        <a href="/web-design-fort-mill-sc.html" class="hover:text-white transition-colors duration-300">Fort Mill</a>
+        <a href="/web-design-rock-hill-sc.html" class="hover:text-white transition-colors duration-300">Rock Hill</a>
+        <a href="/web-design-charlotte-nc.html" class="hover:text-white transition-colors duration-300">Charlotte</a>
+        <a href="/#contact" class="hover:text-white transition-colors duration-300">Contact</a>
       </nav>
 
-      <p class="text-[12.5px] text-white/30">© 2026 Wright Click Studios. All rights reserved.</p>
+      <!-- NAP block. Name, address and phone in crawlable text is the single
+           strongest local-pack signal and the old footer had none of it. These
+           three lines must stay byte-identical to the Google Business Profile
+           listing — if the profile says "Studios" and this says "Studio", the
+           two stop reinforcing each other. -->
+      <div class="nap justify-center text-center" itemscope itemtype="https://schema.org/LocalBusiness">
+        <span><strong itemprop="name">Wright Click Studios</strong></span>
+        <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="addressLocality">Fort Mill</span>,
+          <span itemprop="addressRegion">SC</span>
+          &middot; serving the Charlotte metro
+        </span>
+        <span><a itemprop="telephone" href="tel:+18033220824" data-loc="footer">(803) 322-0824</a></span>
+        <span><a itemprop="email" href="mailto:hello@wrightclickstudio.com">hello@wrightclickstudio.com</a></span>
+      </div>
+      <p class="nap-hours">Mon–Fri 9am–6pm · Calls and texts returned within one business day</p>
+
+      <p class="text-[12.5px] text-white/30">© <span id="yr">2026</span> Wright Click Studios. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
-<script>
-(function () {
-  'use strict';
-
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var finePointer  = window.matchMedia('(pointer: fine)').matches;
-  var canMotion    = finePointer && !reduceMotion;
-
-  /* ---------- Headline: fire the line reveal on load ---------- */
-  var headline = document.querySelector('.hl');
-  if (headline) {
-    requestAnimationFrame(function () {
-      setTimeout(function () { headline.classList.add('lit'); }, 100);
-    });
-  }
-
-  /* ---------- Nav + scroll progress + hero parallax ---------- */
-  var nav = document.getElementById('nav');
-  var progressBar = document.getElementById('progress');
-  var heroInner = document.getElementById('heroInner');
-  var scrollTicking = false;
-
-  var navSolid = false;
-  function onScroll() {
-    var wantSolid = window.scrollY > 24;
-    if (wantSolid !== navSolid) {          // only touch the DOM on an actual change
-      navSolid = wantSolid;
-      nav.classList.toggle('nav-solid', wantSolid);
-    }
-
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    progressBar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
-
-    // Hero content drifts up and dissolves as you leave it
-    if (heroInner && !reduceMotion) {
-      var y = window.scrollY;
-      var vh = window.innerHeight;
-      if (y < vh) {
-        // Hold full opacity through the first quarter, then dissolve as the hero exits
-        var faded = Math.max(0, y - vh * 0.25) / (vh * 0.7);
-        heroInner.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0)';
-        heroInner.style.opacity = String(Math.max(0, 1 - faded));
-      }
-    }
-    scrollTicking = false;
-  }
-
-  window.addEventListener('scroll', function () {
-    if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScroll); }
-  }, { passive: true });
-  onScroll();
-
-  /* ---------- Cursor orb + layered parallax ---------- */
-  var orb = document.getElementById('orb');
-  var layers = Array.prototype.slice.call(document.querySelectorAll('.plx'));
-  var pointerX = 0, pointerY = 0, easedX = 0, easedY = 0, parallaxRaf = null;
-
-  function stepParallax() {
-    parallaxRaf = null;
-    easedX += (pointerX - easedX) * 0.09;
-    easedY += (pointerY - easedY) * 0.09;
-
-    layers.forEach(function (layer) {
-      var depth = parseFloat(layer.dataset.depth) || 0;
-      layer.style.transform =
-        'translate3d(' + (easedX * depth).toFixed(2) + 'px,' + (easedY * depth).toFixed(2) + 'px,0)';
-    });
-
-    if (Math.abs(pointerX - easedX) > 0.0008 || Math.abs(pointerY - easedY) > 0.0008) {
-      parallaxRaf = requestAnimationFrame(stepParallax);
-    }
-  }
-
-  if (canMotion) {
-    window.addEventListener('pointermove', function (e) {
-      pointerX = (e.clientX / window.innerWidth) - 0.5;
-      pointerY = (e.clientY / window.innerHeight) - 0.5;
-
-      orb.style.transform = 'translate3d(' + e.clientX + 'px,' + e.clientY + 'px,0)';
-      orb.style.opacity = '1';
-
-      if (!parallaxRaf) parallaxRaf = requestAnimationFrame(stepParallax);
-    }, { passive: true });
-
-    document.addEventListener('mouseleave', function () { orb.style.opacity = '0'; });
-  }
-
-  /* ---------- Magnetic buttons ---------- */
-  if (canMotion) {
-    Array.prototype.forEach.call(document.querySelectorAll('.magnetic'), function (btn) {
-      btn.addEventListener('pointermove', function (e) {
-        var r = btn.getBoundingClientRect();
-        var dx = e.clientX - r.left - r.width / 2;
-        var dy = e.clientY - r.top - r.height / 2;
-        btn.style.setProperty('--tx', (dx * 0.2).toFixed(1) + 'px');
-        btn.style.setProperty('--ty', (dy * 0.36).toFixed(1) + 'px');
-      });
-      btn.addEventListener('pointerleave', function () {
-        btn.style.setProperty('--tx', '0px');
-        btn.style.setProperty('--ty', '0px');
-      });
-    });
-  }
-
-  /* ---------- Idle ambient animations when their section is off screen ----------
-     CSS animations keep compositing even when scrolled out of view, so the
-     aurora blobs and scan beam were burning frames the whole way down. */
-  (function pauseOffscreenAmbient() {
-    if (reduceMotion) return;
-    var ambient = document.querySelectorAll('.aurora, .scanline, .ring-spin, .marquee-track');
-    if (!('IntersectionObserver' in window)) return;
-
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        entry.target.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
-      });
-    }, { rootMargin: '120px' });
-
-    Array.prototype.forEach.call(ambient, function (el) { io.observe(el); });
-  })();
-
-  /* ---------- Hero particle constellation ---------- */
-  (function particleField() {
-    var canvas = document.getElementById('particles');
-    if (!canvas || reduceMotion) return;
-
-    var ctx = canvas.getContext('2d', { alpha: true });
-    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-    var TINTS = ['0,242,254', '79,172,254', '123,92,255'];
-    var pts = [], W = 0, H = 0;
-    var boxLeft = 0, boxDocTop = 0;          // cached geometry, never read during scroll
-    var localX = -9999, localY = -9999;
-    var visible = true, raf = null;
-
-    function build() {
-      var rect = canvas.getBoundingClientRect();
-      boxLeft = rect.left;
-      boxDocTop = rect.top + window.scrollY;
-      W = rect.width; H = rect.height;
-      if (!W || !H) return;
-
-      canvas.width = Math.round(W * dpr);
-      canvas.height = Math.round(H * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      var count = Math.min(88, Math.max(24, Math.round(W / 18)));
-      pts = [];
-      for (var i = 0; i < count; i++) {
-        pts.push({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          vx: (Math.random() - 0.5) * 0.2,
-          vy: (Math.random() - 0.5) * 0.2,
-          r: Math.random() * 1.5 + 0.6,
-          t: TINTS[i % TINTS.length]
-        });
-      }
-    }
-
-    var LINK2 = 21000;   // squared link radius
-    var LINK  = 145;     // its square root, for cheap axis rejection
-    var CURSOR2 = 34000;
-
-    // Links are bucketed by opacity so the whole field costs a handful of
-    // stroke() calls per frame instead of one per line.
-    var BUCKETS = 5;
-    var buckets = [];
-
-    function draw() {
-      raf = null;
-      ctx.clearRect(0, 0, W, H);
-
-      for (var b = 0; b < BUCKETS; b++) buckets[b] = null;
-
-      var i, j, p, q;
-
-      for (i = 0; i < pts.length; i++) {
-        p = pts[i];
-        p.x += p.vx; p.y += p.vy;
-
-        if (p.x < -20) p.x = W + 20; else if (p.x > W + 20) p.x = -20;
-        if (p.y < -20) p.y = H + 20; else if (p.y > H + 20) p.y = -20;
-      }
-
-      for (i = 0; i < pts.length; i++) {
-        p = pts[i];
-
-        for (j = i + 1; j < pts.length; j++) {
-          q = pts[j];
-          var dx = p.x - q.x;
-          if (dx > LINK || dx < -LINK) continue;      // reject on one axis first
-          var dy = p.y - q.y;
-          if (dy > LINK || dy < -LINK) continue;
-
-          var d2 = dx * dx + dy * dy;
-          if (d2 >= LINK2) continue;
-
-          var slot = (1 - d2 / LINK2) * BUCKETS | 0;
-          if (slot >= BUCKETS) slot = BUCKETS - 1;
-          if (!buckets[slot]) buckets[slot] = new Path2D();
-          buckets[slot].moveTo(p.x, p.y);
-          buckets[slot].lineTo(q.x, q.y);
-        }
-      }
-
-      ctx.lineWidth = 1;
-      for (i = 0; i < BUCKETS; i++) {
-        if (!buckets[i]) continue;
-        ctx.strokeStyle = 'rgba(120,190,254,' + (0.035 + i * 0.035).toFixed(3) + ')';
-        ctx.stroke(buckets[i]);
-      }
-
-      // Cursor web + nodes
-      var cursorPath = null;
-      for (i = 0; i < pts.length; i++) {
-        p = pts[i];
-        var mdx = p.x - localX, mdy = p.y - localY;
-        var md2 = mdx * mdx + mdy * mdy;
-        var near = md2 < CURSOR2;
-
-        if (near) {
-          if (!cursorPath) cursorPath = new Path2D();
-          cursorPath.moveTo(p.x, p.y);
-          cursorPath.lineTo(localX, localY);
-        }
-
-        ctx.fillStyle = 'rgba(' + p.t + ',' + (near ? 0.95 : 0.5) + ')';
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, near ? p.r * 1.7 : p.r, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      if (cursorPath) {
-        ctx.strokeStyle = 'rgba(0,242,254,.3)';
-        ctx.stroke(cursorPath);
-      }
-
-      if (visible) raf = requestAnimationFrame(draw);
-    }
-
-    function start() { if (!raf && visible) raf = requestAnimationFrame(draw); }
-    function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
-
-    build();
-    start();
-
-    window.addEventListener('resize', function () { build(); }, { passive: true });
-
-    if (finePointer) {
-      // Derived from cached geometry + scrollY, so no layout is read while scrolling
-      window.addEventListener('pointermove', function (e) {
-        localX = e.clientX - boxLeft;
-        localY = e.clientY + window.scrollY - boxDocTop;
-      }, { passive: true });
-    }
-
-    // Stop drawing when the hero scrolls away or the tab is hidden
-    new IntersectionObserver(function (entries) {
-      visible = entries[0].isIntersecting;
-      visible ? start() : stop();
-    }, { threshold: 0 }).observe(canvas);
-
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) { stop(); } else { visible = true; start(); }
-    });
-  })();
-
-  /* ---------- Mobile menu ---------- */
-  var menuBtn = document.getElementById('menuBtn');
-  var mobileMenu = document.getElementById('mobileMenu');
-  var menuIcon = document.getElementById('menuIcon');
-  var OPEN_ICON = '<path d="M4 7h16M4 12h16M4 17h16"/>';
-  var CLOSE_ICON = '<path d="M6 6l12 12M18 6L6 18"/>';
-
-  function setMenu(open) {
-    mobileMenu.classList.toggle('hidden', !open);
-    menuBtn.setAttribute('aria-expanded', String(open));
-    menuIcon.innerHTML = open ? CLOSE_ICON : OPEN_ICON;
-  }
-  menuBtn.addEventListener('click', function () {
-    setMenu(mobileMenu.classList.contains('hidden'));
-  });
-  Array.prototype.forEach.call(document.querySelectorAll('.mob-link'), function (a) {
-    a.addEventListener('click', function () { setMenu(false); });
-  });
-
-  /* ---------- Reveal on scroll ---------- */
-  var revealObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-  Array.prototype.forEach.call(document.querySelectorAll('.reveal'), function (el) {
-    revealObserver.observe(el);
-  });
-
-  /* ---------- Counters ---------- */
-  function animateCount(el) {
-    var target = parseFloat(el.dataset.count);
-    var duration = 1500;
-    var start = performance.now();
-    function frame(now) {
-      var p = Math.min((now - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = String(Math.round(target * eased));
-      if (p < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
-  var counterObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        animateCount(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.6 });
-  Array.prototype.forEach.call(document.querySelectorAll('.counter'), function (el) {
-    counterObserver.observe(el);
-  });
-
-  /* ---------- Metric dials ---------- */
-  var CIRC = 2 * Math.PI * 52;
-  var dialObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      var pct = parseFloat(entry.target.dataset.pct) / 100;
-      entry.target.style.strokeDashoffset = String(CIRC * (1 - pct));
-      dialObserver.unobserve(entry.target);
-    });
-  }, { threshold: 0.5 });
-  Array.prototype.forEach.call(document.querySelectorAll('.dial circle.value'), function (c) {
-    c.setAttribute('stroke-dasharray', CIRC.toFixed(1));
-    c.style.strokeDashoffset = CIRC.toFixed(1);
-    dialObserver.observe(c);
-  });
-
-  /* ---------- Case study tabs ---------- */
-  var tabButtons = Array.prototype.slice.call(document.querySelectorAll('.tab-btn'));
-  var indicator = document.getElementById('tabIndicator');
-
-  function moveIndicator(btn) {
-    indicator.style.width = btn.offsetWidth + 'px';
-    indicator.style.transform = 'translateX(' + btn.offsetLeft + 'px)';
-  }
-
-  function selectTab(name) {
-    tabButtons.forEach(function (btn) {
-      var active = btn.dataset.tab === name;
-      btn.setAttribute('aria-selected', String(active));
-      btn.classList.toggle('text-[#04070A]', active);
-      btn.classList.toggle('text-white/55', !active);
-      if (active) moveIndicator(btn);
-    });
-    document.getElementById('panel-before').classList.toggle('active', name === 'before');
-    document.getElementById('panel-after').classList.toggle('active', name === 'after');
-  }
-
-  tabButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () { selectTab(btn.dataset.tab); });
-    btn.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-        e.preventDefault();
-        var next = btn.dataset.tab === 'before' ? 'after' : 'before';
-        selectTab(next);
-        document.getElementById('tab-' + next).focus();
-      }
-    });
-  });
-
-  Array.prototype.forEach.call(document.querySelectorAll('[data-goto]'), function (btn) {
-    btn.addEventListener('click', function () {
-      selectTab(btn.dataset.goto);
-      document.getElementById('work').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
-  // Initial + responsive indicator placement
-  function syncIndicator() {
-    var active = document.querySelector('.tab-btn[aria-selected="true"]');
-    if (active) moveIndicator(active);
-  }
-  window.addEventListener('resize', syncIndicator);
-  window.addEventListener('load', syncIndicator);
-  syncIndicator();
-  // Fonts can shift button widths after load
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncIndicator);
-
-  /* ---------- Cursor spotlight on cards ---------- */
-  Array.prototype.forEach.call(document.querySelectorAll('.spotlight'), function (card) {
-    card.addEventListener('pointermove', function (e) {
-      var r = card.getBoundingClientRect();
-      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-    });
-  });
-
-  /* ---------- Inquiry form ---------- */
-  var form = document.getElementById('inquiryForm');
-  var successState = document.getElementById('successState');
-  var submitBtn = document.getElementById('submitBtn');
-  var btnLabel = document.getElementById('btnLabel');
-  var formError = document.getElementById('formError');
-
-  // Web3Forms relays submissions to the studio inbox. This key is public by
-  // design — it identifies the form, it is not a secret. Spam is filtered by
-  // the honeypot field above.
-  var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
-  var WEB3FORMS_KEY = '1bfe32b4-c393-4831-afe8-4cc6ec627ad7';
-
-  function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    var required = ['name', 'business', 'email', 'type', 'message'];
-    var firstBad = null;
-
-    required.forEach(function (id) {
-      var el = document.getElementById(id);
-      var bad = !el.value.trim() || (id === 'email' && !isValidEmail(el.value.trim()));
-      el.classList.toggle('err', bad);
-      if (bad && !firstBad) firstBad = el;
-    });
-
-    if (firstBad) { firstBad.focus(); return; }
-
-    // Sending state
-    formError.classList.add('hidden');
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '.72';
-    btnLabel.textContent = 'Sending…';
-
-    var val = function (id) { return document.getElementById(id).value.trim(); };
-
-    fetch(WEB3FORMS_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_KEY,
-        subject: 'New project inquiry — ' + val('business'),
-        from_name: 'Wright Click Studios website',
-        name: val('name'),
-        business: val('business'),
-        email: val('email'),
-        phone: val('phone') || '(not given)',
-        business_type: val('type'),
-        message: val('message'),
-        current_website: val('current') || '(none given)',
-        botcheck: document.getElementById('botcheck').checked ? 'true' : ''
-      })
-    })
-      .then(function (res) { return res.json().catch(function () { return { success: res.ok }; }); })
-      .then(function (data) {
-        if (!data.success) throw new Error(data.message || 'Submission rejected');
-        form.classList.add('hidden');
-        successState.classList.remove('hidden');
-      })
-      .catch(function () {
-        // Never show a success state we cannot stand behind.
-        formError.classList.remove('hidden');
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '';
-        btnLabel.textContent = 'Try Again';
-      });
-  });
-
-  // Clear error styling as the user types
-  Array.prototype.forEach.call(form.querySelectorAll('.field'), function (el) {
-    el.addEventListener('input', function () { el.classList.remove('err'); });
-    el.addEventListener('change', function () { el.classList.remove('err'); });
-  });
-
-  document.getElementById('resetForm').addEventListener('click', function () {
-    form.reset();
-    formError.classList.add('hidden');
-    form.classList.remove('hidden');
-    successState.classList.add('hidden');
-    submitBtn.disabled = false;
-    submitBtn.style.opacity = '';
-    btnLabel.textContent = 'Claim My Free Design Preview';
-  });
-})();
-</script>
+<!-- Sticky mobile call bar. Below 1024px the header CTA and the phone number
+     both collapse into the hamburger, which left a phone visitor — most of the
+     audience — with no way to act without hunting for one. -->
+<div class="callbar" id="callbar">
+  <a class="cb-call" href="tel:+18033220824" data-loc="callbar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    Call or text
+  </a>
+  <a class="cb-cta" href="#contact">Free design preview</a>
+</div>
+
+<script src="/js/site.js" defer></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>

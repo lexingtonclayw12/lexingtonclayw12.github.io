@@ -1,0 +1,13 @@
+{
+  "name": "Wright Click Studios",
+  "short_name": "Wright Click",
+  "description": "Websites for local businesses and churches across the Charlotte metro.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "icons": [
+    { "src": "/images/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
