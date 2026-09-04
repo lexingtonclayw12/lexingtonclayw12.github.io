@@ -289,6 +289,60 @@
 }
 
 /* ---------------------------------------------------------------------------
+   6b. DOCUMENT PAGES — terms.html, help.html
+   Long-form prose rather than marketing sections. The .prose rules above only
+   style p / strong / a, which is all the marketing pages needed; legal and
+   support copy also needs lists, sub-headings and a definition-style layout.
+   Everything here stays at or above .50 alpha per the contrast ramp above.
+   ------------------------------------------------------------------------- */
+.docmeta{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;align-items:baseline;
+  margin-top:1.9rem;font-size:13px;color:rgba(255,255,255,.58);
+}
+.docmeta strong{color:rgba(255,255,255,.85);font-weight:600}
+
+/* Numbered section headings. The counter means clauses can be reordered in
+   build_pages.py without renumbering anything by hand — and a terms page whose
+   printed numbering disagrees with the on-screen numbering is worse than one
+   with no numbers at all. */
+.doc{counter-reset:clause}
+.doc .clause{counter-increment:clause}
+.doc .clause > h2::before{
+  content:counter(clause) ". ";
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  color:transparent;
+}
+.doc .clause + .clause{margin-top:3.1rem}
+.doc h2{
+  font-size:clamp(1.35rem,2.6vw,1.75rem);letter-spacing:-.025em;line-height:1.2;
+  margin-bottom:1.05rem;
+}
+.doc h3{
+  font-family:'Space Grotesk',system-ui,sans-serif;font-weight:600;
+  font-size:15.5px;letter-spacing:-.01em;color:#fff;
+  margin:1.7rem 0 .6rem;
+}
+.doc .prose ul,.doc .prose ol{margin:.95rem 0 0 0;padding-left:1.35rem;max-width:42rem}
+.doc .prose li{
+  font-size:16.5px;line-height:1.72;color:rgba(255,255,255,.729);
+  font-weight:300;margin-bottom:.55rem;
+}
+.doc .prose li::marker{color:rgba(255,255,255,.5)}
+.doc .prose li strong{color:#fff;font-weight:600}
+
+/* Jump list at the top of a long document. */
+.doctoc{
+  margin-top:2.4rem;display:grid;gap:.55rem .5rem;
+  grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));max-width:52rem;
+}
+.doctoc a{
+  font-size:14px;color:rgba(255,255,255,.62);text-decoration:none;
+  padding:.5rem .2rem;line-height:1.35;transition:color .3s;
+}
+.doctoc a:hover{color:var(--cyan)}
+.doctoc a span{color:rgba(255,255,255,.42);font-variant-numeric:tabular-nums}
+
+/* ---------------------------------------------------------------------------
    7. MOTION
    The base sheet honours prefers-reduced-motion for its own animations; these
    are the ones added here.
@@ -307,6 +361,10 @@
 @media print{
   .callbar,#nav,#orb,#progress,.aurora,.scanline,canvas,.marquee{display:none!important}
   body{background:#fff!important;color:#000!important}
-  .prose p,.ticks li,.qa .ans p{color:#222!important}
+  .prose p,.ticks li,.qa .ans p,.doc .prose li{color:#222!important}
+  .doc h2,.doc h3,.docmeta strong{color:#000!important}
+  .doc .clause > h2::before{color:#000!important;-webkit-text-fill-color:#000}
+  .doctoc{display:none!important}
+  .qa .ans{display:block!important;height:auto!important}
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:11px;color:#555}
 }
