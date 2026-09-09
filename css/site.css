@@ -276,6 +276,102 @@
 .field-err.show{display:block}
 
 /* ---------------------------------------------------------------------------
+   6c. HERO CHECK-UP
+   The low-commitment door. The design preview is a project-sized ask, so it
+   only ever converted people already decided; this asks for a URL and nothing
+   else, then trades up to the email once the URL is in. Everything here is
+   hand-written rather than Tailwind utilities because base.css is a compiled
+   build — arbitrary classes added later would not exist in it.
+   ------------------------------------------------------------------------- */
+.checkup{
+  border-radius:1.4rem;padding:1.5rem;max-width:41rem;
+  position:relative;overflow:hidden;
+}
+@media (min-width:640px){ .checkup{padding:1.75rem 1.9rem} }
+
+.ck-label{
+  display:block;font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--cyan);font-weight:600;
+}
+.ck-sub{margin-top:.55rem;font-size:14px;line-height:1.55;color:rgba(255,255,255,.62);font-weight:300}
+
+.ck-row{display:flex;flex-direction:column;gap:.7rem;margin-top:1.1rem}
+@media (min-width:640px){ .ck-row{flex-direction:row;align-items:stretch} }
+
+/* The field is its own bordered box so the https:// prefix sits inside it and
+   the owner never has to think about typing a protocol. */
+.ck-field{
+  flex:1;display:flex;align-items:center;min-width:0;
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.14);
+  border-radius:.85rem;padding:0 .35rem 0 .95rem;
+  transition:border-color .25s ease, background .25s ease;
+}
+.ck-field:focus-within{border-color:rgba(0,242,254,.6);background:rgba(0,242,254,.05)}
+.ck-field.err{border-color:rgba(255,107,107,.65)}
+.ck-prefix{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:13px;color:rgba(255,255,255,.58);flex:none;padding-right:.15rem;
+}
+.ck-input{
+  flex:1;min-width:0;background:transparent;border:0;outline:none;
+  color:#fff;font-size:15px;padding:.95rem .6rem;
+}
+/* .50 is the floor set in the README's contrast ramp — a placeholder this
+   audience reads on a phone outdoors is not the place to go under it. */
+.ck-input::placeholder{color:rgba(255,255,255,.52)}
+
+.ck-go{flex:none;padding:.95rem 1.5rem;font-size:14.5px;white-space:nowrap;justify-content:center}
+@media (max-width:639px){ .ck-go{width:100%} }
+
+.ck-echo{color:rgba(255,255,255,.85);font-weight:500;word-break:break-all}
+.ck-edit{
+  background:none;border:0;padding:0;cursor:pointer;font:inherit;
+  color:var(--cyan);text-decoration:underline;text-underline-offset:3px;
+}
+.ck-edit:hover{color:#fff}
+.ck-fine{margin-top:.75rem;font-size:12.5px;color:rgba(255,255,255,.5)}
+
+.ck-done{display:flex;gap:1rem;align-items:flex-start}
+/* Focused programmatically so screen readers land on it; it is tabindex="-1"
+   and never keyboard-reachable, so the ring would only read as a stray border. */
+.ck-done:focus{outline:none}
+/* .ck-done sets display:flex, which outranks the UA's [hidden]{display:none}
+   on specificity — so the finished state would render on load. */
+.ck-step[hidden]{display:none}
+.ck-tick{
+  flex:none;width:2.2rem;height:2.2rem;border-radius:.7rem;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--cyan),var(--violet));
+}
+.ck-done-h{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em}
+.ck-bridge{
+  display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;
+  font-size:13.5px;font-weight:500;color:var(--cyan);
+  text-decoration:underline;text-underline-offset:4px;
+}
+.ck-bridge:hover{color:#fff}
+
+.ck-err{
+  margin-top:1rem;border-radius:.75rem;padding:.85rem 1rem;font-size:13.5px;line-height:1.5;
+  border:1px solid rgba(255,107,107,.4);background:rgba(255,107,107,.1);color:#FFB4B4;
+}
+.ck-err a{color:#FFD9D9;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.ck-err.hidden{display:none}
+
+/* Secondary doors. Deliberately quiet — they are the fallback for the people
+   the check-up cannot serve, not competition for it. */
+.ck-alt{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;
+  margin-top:1.1rem;padding-left:.25rem;font-size:13.5px;
+}
+.ck-alt a{
+  display:inline-flex;align-items:center;gap:.45rem;
+  color:rgba(255,255,255,.62);transition:color .25s ease;
+}
+.ck-alt a:hover{color:#fff}
+.ck-alt-sep{color:rgba(255,255,255,.25)}
+@media (hover:none),(max-width:1023px){ .ck-alt a{padding:.55rem 0} }
+
+/* ---------------------------------------------------------------------------
    6b. TOUCH TARGETS
    The footer nav and the breadcrumb were 19–20px tall links — fine with a
    mouse, a coin-toss with a thumb. Padding brings them to ~44px on touch

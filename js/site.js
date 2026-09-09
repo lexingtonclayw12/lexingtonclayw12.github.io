@@ -440,6 +440,155 @@
     sync();
   })();
 
+  /* ---------- Hero check-up ----------
+     Two steps on purpose. Asking for the URL alone is a near-zero commitment,
+     and someone who has already typed it is markedly more likely to give an
+     email than someone shown both fields at once. Nothing is sent until step
+     two, so a half-finished check-up produces no half-lead. */
+  (function () {
+    var ck = document.getElementById('scoreForm');
+    if (!ck) return;
+
+    var ENDPOINT = 'https://api.web3forms.com/submit';
+    var KEY = '1bfe32b4-c393-4831-afe8-4cc6ec627ad7';
+
+    var steps = {};
+    Array.prototype.forEach.call(ck.querySelectorAll('[data-ck-step]'), function (el) {
+      steps[el.getAttribute('data-ck-step')] = el;
+    });
+
+    var urlEl   = document.getElementById('ckUrl');
+    var mailEl  = document.getElementById('ckEmail');
+    var echoEl  = document.getElementById('ckEchoUrl');
+    var errBox  = document.getElementById('ckError');
+    var sendLbl = document.getElementById('ckSendLabel');
+    var current = 'url';
+    var cleanUrl = '';
+
+    function show(name) {
+      current = name;
+      Object.keys(steps).forEach(function (k) { steps[k].hidden = (k !== name); });
+    }
+
+    function fieldErr(el, msg) {
+      var box = ck.querySelector('[data-err-for="' + el.id + '"]');
+      if (box) { box.textContent = msg; box.classList.add('show'); }
+      var wrap = el.closest('.ck-field');
+      if (wrap) wrap.classList.add('err');
+      el.focus();
+    }
+    function fieldOk(el) {
+      var box = ck.querySelector('[data-err-for="' + el.id + '"]');
+      if (box) box.classList.remove('show');
+      var wrap = el.closest('.ck-field');
+      if (wrap) wrap.classList.remove('err');
+    }
+
+    // Owners type "yourbusiness.com", "www.yourbusiness.com" and
+    // "https://yourbusiness.com/" in roughly equal measure. Normalise all
+    // three rather than rejecting two of them.
+    function normalise(raw) {
+      var v = raw.trim().replace(/^https?:\/\//i, '').replace(/^\/+/, '');
+      if (!v) return null;
+      var host = v.split(/[\/?#]/)[0];
+      if (host.indexOf('.') === -1) return null;
+      if (!/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(host)) return null;
+      return 'https://' + v;
+    }
+
+    ck.addEventListener('submit', function (e) {
+      e.preventDefault();
+      errBox.classList.add('hidden');
+
+      if (current === 'url') {
+        var candidate = normalise(urlEl.value);
+        if (!candidate) {
+          fieldErr(urlEl, 'That does not look like a web address — try yourbusiness.com');
+          return;
+        }
+        fieldOk(urlEl);
+        cleanUrl = candidate;
+        echoEl.textContent = cleanUrl.replace(/^https:\/\//, '');
+        show('email');
+        mailEl.focus();
+        track('checkup_url', { checkup_url: cleanUrl });
+        return;
+      }
+
+      if (current !== 'email') return;
+
+      var mail = mailEl.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) {
+        fieldErr(mailEl, mail ? 'That address looks incomplete.' : 'We need somewhere to send it.');
+        return;
+      }
+      fieldOk(mailEl);
+
+      var btn = steps.email.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.style.opacity = '.72';
+      sendLbl.textContent = 'Sending…';
+
+      var bot = document.getElementById('ckBotcheck');
+      var source = ck.dataset.source || document.title;
+
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: KEY,
+          subject: 'Website check-up request — ' + cleanUrl.replace(/^https:\/\//, ''),
+          from_name: 'Wright Click Studios website',
+          website: cleanUrl,
+          email: mail,
+          lead_type: 'Free website check-up',
+          page_source: source,
+          landing_path: location.pathname,
+          botcheck: bot && bot.checked ? 'true' : ''
+        })
+      })
+        .then(function (res) { return res.json().catch(function () { return { success: res.ok }; }); })
+        .then(function (data) {
+          if (!data.success) throw new Error(data.message || 'Submission rejected');
+          show('done');
+          steps.done.setAttribute('tabindex', '-1');
+          steps.done.focus();
+          track('lead_checkup', { page_source: source, checkup_url: cleanUrl });
+        })
+        .catch(function () {
+          // Never show a success state we cannot stand behind.
+          errBox.classList.remove('hidden');
+          btn.disabled = false;
+          btn.style.opacity = '';
+          sendLbl.textContent = 'Try Again';
+        });
+    });
+
+    var editBtn = document.getElementById('ckEditUrl');
+    if (editBtn) {
+      editBtn.addEventListener('click', function () {
+        show('url');
+        urlEl.focus();
+        urlEl.select();
+      });
+    }
+
+    urlEl.addEventListener('input', function () { fieldOk(urlEl); });
+    mailEl.addEventListener('input', function () { fieldOk(mailEl); });
+
+    // Enter is the natural way out of a one-field form, and implicit
+    // submission is not reliable across browsers once the form holds several
+    // inputs with only one of them on screen. Drive it explicitly.
+    [urlEl, mailEl].forEach(function (el) {
+      el.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        if (ck.requestSubmit) ck.requestSubmit();
+        else ck.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+      });
+    });
+  })();
+
   /* ---------- Inquiry form ---------- */
   var form = document.getElementById('inquiryForm');
   var successState = document.getElementById('successState');
