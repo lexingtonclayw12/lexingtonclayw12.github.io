@@ -64,3 +64,10 @@ Never delete posts, reply to comments or send DMs. Read-only comment review may 
 Built from the prior “Create Social Content Strategy” and “Automate Sweet Tea Satellite socials” chats and current local campaign files. Holler Moon Spotify and HyperFollow URLs both returned HTTP 200 on October 24; song Apple URLs came from the existing reel-plan.json. HTTP success is reachability, not a simulated playback or proof every music app deep link works. Test on the owner’s phone before putting a new route in a live bio.
 
 Optional YouTube expansion is outside this three-platform batch. If added, route Shorts viewers through a channel profile link or related video; Shorts descriptions and comments do not offer clickable ordinary URLs: https://support.google.com/youtube/answer/13748639?hl=en .
+
+
+## Standing approval and clean-caption review — October 24, 2026
+
+The user authorized automatic routine future publishing without asking for approval per post. Before publishing, the agent must read the entire final caption and hashtags, remove cursing, profanity (including disguised forms), slurs, insults and harsh language, and record a passed review tied to the exact caption hash. Review visible/spoken promotional copy and select clean song passages too. Do not silently change lyrics or masters. Full local policy: /Users/recilcwright/Documents/Codex/2026-10-24/ok/outputs/CLEAN-CAPTION-POLICY.md . Preserve all account, audience, AI-label and duplicate checks. Clean captions cannot guarantee platform acceptance.
+
+Supporting content is part of the plan: prepare two additional seasonal/community feed posts weekly and Stories on three or four days when useful, alongside the three core music posts. Use real licensed photography/footage and natural song references; each post has one primary purpose (conversation, atmosphere or a listening click). Match seasonal language to its actual future publication date. Do not publish more than the established publisher caps or clear unready rows just to fill these suggestions.
