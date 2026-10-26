@@ -1,0 +1,240 @@
+{
+  "created": "2026-10-24",
+  "note": "Planning file only. Not a publishing queue. Keep existing publisher and receipts authoritative. Assign Transmission number immediately before queueing after reconciliation; increment once per core creative, not per cross-post.",
+  "posts": [
+    {
+      "campaign_id": "sts-click-2026-10-26-porch-light-goes-out",
+      "proposed_local_time": "2026-10-26T19:00:00",
+      "timezone": "America/New_York",
+      "song": "Porch Light Goes Out",
+      "slug": "porch-light-goes-out",
+      "status": "draft_not_enqueued",
+      "ready_for_publish": false,
+      "transmission_number": null,
+      "hook": "Some October nights need a light to come home to.",
+      "on_screen_copy": "Leave the porch light on.",
+      "creative_brief": "Create a distinct 15–25 second edit from the existing master. Begin on the musical hook; show song and artist by second 2. Use graded real stock footage, gold Rye titles, Montserrat captions. Final 3 seconds show the platform-specific listening CTA. Do not re-upload the prior introduction reel.",
+      "blockers": [
+        "New video edit and preview required",
+        "Transmission number must be reconciled against actual posts",
+        "Existing queue and receipts must be checked",
+        "Bio-link placement must be verified before using bio CTA"
+      ],
+      "platforms": {
+        "facebook": {
+          "caption_without_transmission_number": "Some October nights need a light to come home to.\n\n“Porch Light Goes Out” — Sweet Tea Satellite, from Holler Moon.\n\nPlay the full song tonight. https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-26-porch-light-goes-out&song=porch-light-goes-out#songs\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Play the full song tonight. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-26-porch-light-goes-out&song=porch-light-goes-out#songs",
+          "status": "draft"
+        },
+        "instagram": {
+          "caption_without_transmission_number": "Some October nights need a light to come home to.\n\n“Porch Light Goes Out” — Sweet Tea Satellite, from Holler Moon.\n\nPlay the full song tonight. Tap our profile’s listening link and choose “Porch Light Goes Out.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Play the full song tonight. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-26-porch-light-goes-out&song=porch-light-goes-out#songs",
+          "status": "draft"
+        },
+        "tiktok": {
+          "caption_without_transmission_number": "Some October nights need a light to come home to.\n\n“Porch Light Goes Out” — Sweet Tea Satellite, from Holler Moon.\n\nPlay the full song tonight. Tap our profile’s listening link and choose “Porch Light Goes Out.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Play the full song tonight. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=tiktok&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-26-porch-light-goes-out&song=porch-light-goes-out#songs",
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "campaign_id": "sts-click-2026-10-28-hayride-to-nowhere",
+      "proposed_local_time": "2026-10-28T19:00:00",
+      "timezone": "America/New_York",
+      "song": "Hayride to Nowhere",
+      "slug": "hayride-to-nowhere",
+      "status": "draft_not_enqueued",
+      "ready_for_publish": false,
+      "transmission_number": null,
+      "hook": "The hayride took a turn nobody remembers.",
+      "on_screen_copy": "Would you stay on the wagon?",
+      "creative_brief": "Create a distinct 15–25 second edit from the existing master. Begin on the musical hook; show song and artist by second 2. Use graded real stock footage, gold Rye titles, Montserrat captions. Final 3 seconds show the platform-specific listening CTA. Do not re-upload the prior introduction reel.",
+      "blockers": [
+        "New video edit and preview required",
+        "Transmission number must be reconciled against actual posts",
+        "Existing queue and receipts must be checked",
+        "Bio-link placement must be verified before using bio CTA"
+      ],
+      "platforms": {
+        "facebook": {
+          "caption_without_transmission_number": "The hayride took a turn nobody remembers.\n\n“Hayride to Nowhere” — Sweet Tea Satellite, from Holler Moon.\n\nHear where this ride goes. https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-28-hayride-to-nowhere&song=hayride-to-nowhere#songs\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Hear where this ride goes. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-28-hayride-to-nowhere&song=hayride-to-nowhere#songs",
+          "status": "draft"
+        },
+        "instagram": {
+          "caption_without_transmission_number": "The hayride took a turn nobody remembers.\n\n“Hayride to Nowhere” — Sweet Tea Satellite, from Holler Moon.\n\nHear where this ride goes. Tap our profile’s listening link and choose “Hayride to Nowhere.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Hear where this ride goes. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-28-hayride-to-nowhere&song=hayride-to-nowhere#songs",
+          "status": "draft"
+        },
+        "tiktok": {
+          "caption_without_transmission_number": "The hayride took a turn nobody remembers.\n\n“Hayride to Nowhere” — Sweet Tea Satellite, from Holler Moon.\n\nHear where this ride goes. Tap our profile’s listening link and choose “Hayride to Nowhere.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Hear where this ride goes. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=tiktok&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-28-hayride-to-nowhere&song=hayride-to-nowhere#songs",
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "campaign_id": "sts-click-2026-10-30-scarecrow-waltz",
+      "proposed_local_time": "2026-10-30T19:00:00",
+      "timezone": "America/New_York",
+      "song": "Scarecrow Waltz",
+      "slug": "scarecrow-waltz",
+      "status": "draft_not_enqueued",
+      "ready_for_publish": false,
+      "transmission_number": null,
+      "hook": "One more dance before Halloween.",
+      "on_screen_copy": "A ghost story you can waltz to.",
+      "creative_brief": "Create a distinct 15–25 second edit from the existing master. Begin on the musical hook; show song and artist by second 2. Use graded real stock footage, gold Rye titles, Montserrat captions. Final 3 seconds show the platform-specific listening CTA. Do not re-upload the prior introduction reel.",
+      "blockers": [
+        "New video edit and preview required",
+        "Transmission number must be reconciled against actual posts",
+        "Existing queue and receipts must be checked",
+        "Bio-link placement must be verified before using bio CTA"
+      ],
+      "platforms": {
+        "facebook": {
+          "caption_without_transmission_number": "One more dance before Halloween.\n\n“Scarecrow Waltz” — Sweet Tea Satellite, from Holler Moon.\n\nTake the whole song for a spin. https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-30-scarecrow-waltz&song=scarecrow-waltz#songs\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Take the whole song for a spin. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-30-scarecrow-waltz&song=scarecrow-waltz#songs",
+          "status": "draft"
+        },
+        "instagram": {
+          "caption_without_transmission_number": "One more dance before Halloween.\n\n“Scarecrow Waltz” — Sweet Tea Satellite, from Holler Moon.\n\nTake the whole song for a spin. Tap our profile’s listening link and choose “Scarecrow Waltz.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Take the whole song for a spin. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-30-scarecrow-waltz&song=scarecrow-waltz#songs",
+          "status": "draft"
+        },
+        "tiktok": {
+          "caption_without_transmission_number": "One more dance before Halloween.\n\n“Scarecrow Waltz” — Sweet Tea Satellite, from Holler Moon.\n\nTake the whole song for a spin. Tap our profile’s listening link and choose “Scarecrow Waltz.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Take the whole song for a spin. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=tiktok&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-10-30-scarecrow-waltz&song=scarecrow-waltz#songs",
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "campaign_id": "sts-click-2026-11-02-sweet-tea-at-sunrise",
+      "proposed_local_time": "2026-11-02T19:00:00",
+      "timezone": "America/New_York",
+      "song": "Sweet Tea at Sunrise",
+      "slug": "sweet-tea-at-sunrise",
+      "status": "draft_not_enqueued",
+      "ready_for_publish": false,
+      "transmission_number": null,
+      "hook": "The porch is still here when spooky season ends.",
+      "on_screen_copy": "Every long night needs a warm ending.",
+      "creative_brief": "Create a distinct 15–25 second edit from the existing master. Begin on the musical hook; show song and artist by second 2. Use graded real stock footage, gold Rye titles, Montserrat captions. Final 3 seconds show the platform-specific listening CTA. Do not re-upload the prior introduction reel.",
+      "blockers": [
+        "New video edit and preview required",
+        "Transmission number must be reconciled against actual posts",
+        "Existing queue and receipts must be checked",
+        "Bio-link placement must be verified before using bio CTA"
+      ],
+      "platforms": {
+        "facebook": {
+          "caption_without_transmission_number": "The porch is still here when spooky season ends.\n\n“Sweet Tea at Sunrise” — Sweet Tea Satellite, from Holler Moon.\n\nSettle in for the full song. https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-02-sweet-tea-at-sunrise&song=sweet-tea-at-sunrise#songs\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Settle in for the full song. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-02-sweet-tea-at-sunrise&song=sweet-tea-at-sunrise#songs",
+          "status": "draft"
+        },
+        "instagram": {
+          "caption_without_transmission_number": "The porch is still here when spooky season ends.\n\n“Sweet Tea at Sunrise” — Sweet Tea Satellite, from Holler Moon.\n\nSettle in for the full song. Tap our profile’s listening link and choose “Sweet Tea at Sunrise.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Settle in for the full song. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-02-sweet-tea-at-sunrise&song=sweet-tea-at-sunrise#songs",
+          "status": "draft"
+        },
+        "tiktok": {
+          "caption_without_transmission_number": "The porch is still here when spooky season ends.\n\n“Sweet Tea at Sunrise” — Sweet Tea Satellite, from Holler Moon.\n\nSettle in for the full song. Tap our profile’s listening link and choose “Sweet Tea at Sunrise.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Settle in for the full song. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=tiktok&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-02-sweet-tea-at-sunrise&song=sweet-tea-at-sunrise#songs",
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "campaign_id": "sts-click-2026-11-04-dead-mans-honky-tonk",
+      "proposed_local_time": "2026-11-04T19:00:00",
+      "timezone": "America/New_York",
+      "song": "Dead Man’s Honky-Tonk",
+      "slug": "dead-mans-honky-tonk",
+      "status": "draft_not_enqueued",
+      "ready_for_publish": false,
+      "transmission_number": null,
+      "hook": "Some dance floors keep the night going.",
+      "on_screen_copy": "This honky-tonk has no closing time.",
+      "creative_brief": "Create a distinct 15–25 second edit from the existing master. Begin on the musical hook; show song and artist by second 2. Use graded real stock footage, gold Rye titles, Montserrat captions. Final 3 seconds show the platform-specific listening CTA. Do not re-upload the prior introduction reel.",
+      "blockers": [
+        "New video edit and preview required",
+        "Transmission number must be reconciled against actual posts",
+        "Existing queue and receipts must be checked",
+        "Bio-link placement must be verified before using bio CTA"
+      ],
+      "platforms": {
+        "facebook": {
+          "caption_without_transmission_number": "Some dance floors keep the night going.\n\n“Dead Man’s Honky-Tonk” — Sweet Tea Satellite, from Holler Moon.\n\nHear the full story. https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-04-dead-mans-honky-tonk&song=dead-mans-honky-tonk#songs\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Hear the full story. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-04-dead-mans-honky-tonk&song=dead-mans-honky-tonk#songs",
+          "status": "draft"
+        },
+        "instagram": {
+          "caption_without_transmission_number": "Some dance floors keep the night going.\n\n“Dead Man’s Honky-Tonk” — Sweet Tea Satellite, from Holler Moon.\n\nHear the full story. Tap our profile’s listening link and choose “Dead Man’s Honky-Tonk.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Hear the full story. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-04-dead-mans-honky-tonk&song=dead-mans-honky-tonk#songs",
+          "status": "draft"
+        },
+        "tiktok": {
+          "caption_without_transmission_number": "Some dance floors keep the night going.\n\n“Dead Man’s Honky-Tonk” — Sweet Tea Satellite, from Holler Moon.\n\nHear the full story. Tap our profile’s listening link and choose “Dead Man’s Honky-Tonk.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Hear the full story. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=tiktok&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-04-dead-mans-honky-tonk&song=dead-mans-honky-tonk#songs",
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "campaign_id": "sts-click-2026-11-06-porch-light-goes-out",
+      "proposed_local_time": "2026-11-06T19:00:00",
+      "timezone": "America/New_York",
+      "song": "Porch Light Goes Out",
+      "slug": "porch-light-goes-out",
+      "status": "draft_not_enqueued",
+      "ready_for_publish": false,
+      "transmission_number": null,
+      "hook": "For the drive home after a long week.",
+      "on_screen_copy": "A light to come home to.",
+      "creative_brief": "Create a distinct 15–25 second edit from the existing master. Begin on the musical hook; show song and artist by second 2. Use graded real stock footage, gold Rye titles, Montserrat captions. Final 3 seconds show the platform-specific listening CTA. Do not re-upload the prior introduction reel.",
+      "blockers": [
+        "New video edit and preview required",
+        "Transmission number must be reconciled against actual posts",
+        "Existing queue and receipts must be checked",
+        "Bio-link placement must be verified before using bio CTA"
+      ],
+      "platforms": {
+        "facebook": {
+          "caption_without_transmission_number": "For the drive home after a long week.\n\n“Porch Light Goes Out” — Sweet Tea Satellite, from Holler Moon.\n\nPut the full song on tonight. https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-06-porch-light-goes-out&song=porch-light-goes-out#songs\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Put the full song on tonight. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=facebook&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-06-porch-light-goes-out&song=porch-light-goes-out#songs",
+          "status": "draft"
+        },
+        "instagram": {
+          "caption_without_transmission_number": "For the drive home after a long week.\n\n“Porch Light Goes Out” — Sweet Tea Satellite, from Holler Moon.\n\nPut the full song on tonight. Tap our profile’s listening link and choose “Porch Light Goes Out.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Put the full song on tonight. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=instagram&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-06-porch-light-goes-out&song=porch-light-goes-out#songs",
+          "status": "draft"
+        },
+        "tiktok": {
+          "caption_without_transmission_number": "For the drive home after a long week.\n\n“Porch Light Goes Out” — Sweet Tea Satellite, from Holler Moon.\n\nPut the full song on tonight. Tap our profile’s listening link and choose “Porch Light Goes Out.”\n\nAI-generated music.\n#SweetTeaSatellite #CosmicCountry",
+          "fallback_cta_if_profile_link_unverified": "Put the full song on tonight. Search Sweet Tea Satellite — Holler Moon on your music app.",
+          "campaign_url": "https://wrightclickstudio.com/sweet-tea-satellite/?utm_source=tiktok&utm_medium=organic_social&utm_campaign=holler_moon_clicks_2026&utm_content=sts-click-2026-11-06-porch-light-goes-out&song=porch-light-goes-out#songs",
+          "status": "draft"
+        }
+      }
+    }
+  ]
+}
