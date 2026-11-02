@@ -1,0 +1,14 @@
+{
+  "hero": {
+    "file": "assets/cabin.jpg",
+    "method": "Built-in ImageGen",
+    "prompt": "Photorealistic wide cinematic Southern Appalachian timber cabin at blue-hour dusk; warm window and porch string lights; wooden rocking chair and acoustic guitar; glass pitcher of amber sweet tea with lemon and mason jars in the foreground; dark forest on left for cream typography; no people, text, UI, logos or watermark.",
+    "note": "AI-generated concept artwork. The referenced ChatGPT mockup was inaccessible."
+  },
+  "music": "Owner-provided Our Kids Ain't Poker Chips MP3 and six existing Holler Moon WAV masters, encoded to 128 kbps MP3 without changing lyrics or arrangement.",
+  "covers": "Five existing owner campaign covers for Sunrise, Porch Light, Hayride, Scarecrow and Honky-Tonk, resized to 640px JPEG. Cabin concept artwork used for remaining two sleeves.",
+  "video": "Existing owner Sweet Tea at Sunrise 28-second campaign promo with AI-generated artwork and original song audio.",
+  "captions": "Existing Whisper-turbo timed transcript for the owner song; shifted by 123 seconds and clamped to 28 seconds.",
+  "links": "Existing repository sweet-tea-satellite/catalog.json and original cinematic page social links.",
+  "fonts": "Existing sibling Rye and Montserrat fonts, SIL Open Font License."
+}
