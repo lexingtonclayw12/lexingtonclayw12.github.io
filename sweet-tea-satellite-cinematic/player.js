@@ -109,3 +109,22 @@ async function init() {
  volumeSync();
 }
 init();
+
+// Match the glow overlay to the photograph's object-fit: cover crop.
+const hero = $('home');
+const lightLayer = hero.querySelector('.hero-lights');
+function alignPorchLights() {
+ const photo = hero.querySelector('.hero-photo');
+ const width = hero.clientWidth, height = hero.clientHeight;
+ const scale = Math.max(width / 1672, height / 941);
+ const position = parseFloat(getComputedStyle(photo).objectPosition) / 100;
+ const cropWidth = width / scale, cropHeight = height / scale;
+ lightLayer.setAttribute('viewBox', [(1672 - cropWidth) * position, (941 - cropHeight) / 2, cropWidth, cropHeight].join(' '));
+}
+new ResizeObserver(alignPorchLights).observe(hero);
+alignPorchLights();
+$('light-toggle').onclick = () => {
+ const paused = hero.classList.toggle('lights-paused');
+ $('light-toggle').setAttribute('aria-pressed', String(paused));
+ $('light-toggle').textContent = paused ? 'Resume light flicker' : 'Pause light flicker';
+};
