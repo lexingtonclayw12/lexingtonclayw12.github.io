@@ -7,3 +7,11 @@
 .lights-paused .porch-bulb{animation:none;opacity:.55}
 .light-toggle{position:absolute;right:6%;bottom:35px;padding:7px 0;background:none;border:0;border-bottom:1px solid #e6b86c66;font:9px Montserrat,Arial,sans-serif;color:#e0d2b9;letter-spacing:.04em;min-height:28px}
 @media(prefers-reduced-motion:reduce){.porch-bulb{animation:none;opacity:.55}.light-toggle{display:none}}
+
+/* The resident stays inside the glass panes, behind the photographed frames. */
+.resident-walk{animation:resident-pass 15s ease-in-out infinite;transform:translateX(0)}
+.resident-body{animation:resident-sway 1.6s ease-in-out infinite;transform-origin:1415px 375px;filter:blur(.7px)}
+@keyframes resident-pass{0%,100%{transform:translateX(-24px)}45%,55%{transform:translateX(30px)}}
+@keyframes resident-sway{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(1.5px) rotate(1deg)}}
+.lights-paused .resident-walk,.lights-paused .resident-body{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.resident-walk,.resident-body{animation:none}}

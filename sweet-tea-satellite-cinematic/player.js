@@ -126,5 +126,5 @@ alignPorchLights();
 $('light-toggle').onclick = () => {
  const paused = hero.classList.toggle('lights-paused');
  $('light-toggle').setAttribute('aria-pressed', String(paused));
- $('light-toggle').textContent = paused ? 'Resume light flicker' : 'Pause light flicker';
+ $('light-toggle').textContent = paused ? 'Resume cabin animation' : 'Pause cabin animation';
 };
